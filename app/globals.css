@@ -214,3 +214,13 @@ body.cursor-ready .cursor-ring { opacity: 1; }
   .cursor-dot,
   .cursor-ring { display: none !important; }
 }
+
+/* ─── Marquee (shared by ResearchInstitutions + Partners) ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-reverse {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
