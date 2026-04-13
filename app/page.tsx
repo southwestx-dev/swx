@@ -1131,18 +1131,18 @@ function TextImage() {
       {/* Left: text */}
       <div style={{ flex: '1 0 0', padding: `${r(192)} ${r(64)}`, display: 'flex', flexDirection: 'column', gap: r(96) }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
-          <p style={{ fontSize: r(23), lineHeight: 1.6, color: TEAL }}>Our Approach</p>
+          <p style={{ fontSize: r(23), lineHeight: 1.6, color: TEAL }}>The SouthwestX Ecosystem</p>
           <h2 style={{ fontSize: 'clamp(2.5rem, 4.5vw, 4.3125rem)', fontWeight: 400, lineHeight: 1.1, color: DARK2 }}>
-            Where science meets entrepreneurship
+            A strong network across Germany and Europe
           </h2>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 48 }}>
           <div style={{ fontSize: r(18), lineHeight: 1.6, color: '#404040' }}>
-            <p style={{ marginBottom: 8 }}>southwestX is built on the conviction that Europe's strongest competitive advantage lies in its scientific depth. We work at the intersection of world-class research institutions, ambitious founders, and forward-thinking industry partners — structuring the conditions for breakthrough innovation to become market-ready companies.</p>
-            <p>Our programs span the full journey: from validating a technology's commercial potential to navigating the complexities of cross-border scaling. Operating across the Franco-German innovation corridor, we connect the right people at the right moment — turning proximity to research excellence into a strategic advantage for startups and corporates alike.</p>
+            <p style={{ marginBottom: 16 }}>SouthwestX is embedded in a strong national and international innovation ecosystem. Through strategic networks, research-driven partnerships and cross-border collaboration, we connect startups and companies with the institutions, expertise and market access that matter for long-term growth.</p>
+            <p>From Germany's startup landscape to partnerships across France, Luxembourg and the wider European context, SouthwestX creates the connections that expand opportunity, strengthen visibility and open pathways for venture building and innovation.</p>
           </div>
           <div style={{ display: 'flex', gap: 16 }}>
-            <a href="#programs" className="btn-hover-light" style={lightGhostBtnStyle}>Explore our programs</a>
+            <a href="#programs" className="btn-hover-light" style={lightGhostBtnStyle}>Explore the ecosystem</a>
             <a href="#cta" data-contact-modal className="btn-hover-light" style={lightGhostBtnStyle}>Get in touch</a>
           </div>
         </div>
