@@ -1,0 +1,30 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main rocket body -->
+  <g transform="translate(12.06, 5.56)">
+    <path d="M2.82843 26.4416L27.2701 2H44.3793V19.1091L19.9376 43.5508L2.82843 26.4416Z" stroke="#3CCBDA" stroke-width="4"/>
+  </g>
+  <!-- Left wing -->
+  <g transform="translate(4.73, 15.34)">
+    <path d="M10.1609 2L2.82843 9.3325L10.1609 16.665L24.8259 2H10.1609Z" stroke="#3CCBDA" stroke-width="4"/>
+  </g>
+  <!-- Right wing -->
+  <g transform="translate(29.17, 29.61)">
+    <path d="M17.4934 19.4934L10.1609 26.8259L2.82843 19.4934L17.4934 4.82843V19.4934Z" stroke="#3CCBDA" stroke-width="4"/>
+  </g>
+  <!-- Long thruster trail -->
+  <g transform="translate(6.15, 44.04)">
+    <path d="M12.413 1.41421L1.41421 12.413" stroke="#3CCBDA" stroke-width="4"/>
+  </g>
+  <!-- Short thruster detail 1 -->
+  <g transform="translate(19.59, 51.36)">
+    <path d="M6.30255 1.41421L1.41421 6.30255" stroke="#3CCBDA" stroke-width="4"/>
+  </g>
+  <!-- Short thruster detail 2 -->
+  <g transform="translate(4.93, 36.7)">
+    <path d="M6.30255 1.41421L1.41421 6.30255" stroke="#3CCBDA" stroke-width="4"/>
+  </g>
+  <!-- Window / circle detail -->
+  <g transform="translate(36.66, 19.56)">
+    <path d="M6.37882 1.4142L1.41423 6.37889" stroke="#3CCBDA" stroke-width="4"/>
+  </g>
+</svg>

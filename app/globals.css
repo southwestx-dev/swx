@@ -1,0 +1,216 @@
+/* Inter loaded locally via next/font — no CDN dependency */
+
+/* ─── Design Tokens ─────────────────────────────── */
+:root {
+  --bg:            #0f0f0c;
+  --bg-surface:    #1c1c17;
+  --bg-raised:     #242420;
+  --bg-elevated:   #2c2c26;
+
+  --border:        #2a2a22;
+  --border-accent: rgba(0, 255, 194, 0.35);
+  --border-hover:  #3a3a32;
+
+  --accent:        #00ffc2;
+  --accent-hover:  #00cc9b;
+  --accent-press:  #009974;
+  --accent-subtle: rgba(0, 255, 194, 0.07);
+  --accent-glow:   rgba(0, 255, 194, 0.15);
+
+  --ivory-100:     #efe9e0;
+  --ivory-200:     #d9cab2;
+
+  --text-1: #ffffff;
+  --text-2: #e5e5e5;
+  --text-3: #a3a3a3;
+  --text-4: #737373;
+  --on-accent: #000000;
+
+  --font: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --r-sm:   4px;
+  --r-md:   8px;
+  --r-lg:   12px;
+  --r-xl:   20px;
+  --r-2xl:  28px;
+  --r-full: 9999px;
+
+  --ease:      200ms ease;
+  --ease-slow: 400ms ease;
+
+  --max-w: 1200px;
+  --nav-h: 6rem;
+}
+
+/* ─── Reset ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ─── Type Scale ────────────────────────────────── */
+/* Base 16px = scale 1.00 (>1920px)                 */
+html { font-size: 16px; }
+@media (max-width: 1920px) { html { font-size: 15.68px; } } /* ×0.98 */
+@media (max-width: 1440px) { html { font-size: 14.88px; } } /* ×0.93 */
+@media (max-width: 1024px) { html { font-size: 13.76px; } } /* ×0.86 */
+@media (max-width: 768px)  { html { font-size: 12.48px; } } /* ×0.78 */
+@media (max-width: 425px)  { html { font-size: 11.2px;  } } /* ×0.70 */
+
+html { scroll-behavior: smooth; overflow-x: hidden; }
+
+body {
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text-2);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection { background: rgba(0, 255, 194, 0.25); }
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-hover); }
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; font-family: var(--font); border: none; background: none; }
+
+/* ─── Button hover — circulating outline ────────── */
+
+/* Animatable CSS custom property for the conic-gradient start angle */
+@property --btn-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes btnBorderSpin {
+  to { --btn-angle: 360deg; }
+}
+
+/* Base: ensure pseudo-element can be positioned */
+.btn-hover,
+.btn-hover-light {
+  position: relative !important;
+  transition: background 0.2s !important;
+}
+
+/* The circulating border ring */
+.btn-hover::before,
+.btn-hover-light::before {
+  content: '';
+  position: absolute;
+  inset: -2px;              /* ring sits just outside the button box  */
+  border-radius: inherit;
+  padding: 2px;             /* ring thickness                          */
+  background: conic-gradient(
+    from var(--btn-angle),
+    transparent                    0%,
+    transparent                   42%,
+    rgba(60, 203, 218, 0.25)      52%,
+    #3ccbda                       62%,
+    rgba(60, 203, 218, 0.25)      72%,
+    transparent                   82%,
+    transparent                  100%
+  );
+  /* Punch out the interior so only the 2 px ring is visible */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+/* Trigger on hover */
+.btn-hover:hover,
+.btn-hover-light:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+.btn-hover:hover {
+  color: white !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+.btn-hover-light:hover {
+  background: rgba(60, 203, 218, 0.07) !important;
+}
+.btn-hover:hover::before,
+.btn-hover-light:hover::before {
+  opacity: 1;
+  animation: btnBorderSpin 2.4s linear infinite;
+}
+
+/* Respect user motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .btn-hover::before,
+  .btn-hover-light::before { animation: none !important; opacity: 0 !important; }
+}
+
+/* ─── Utility ───────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+}
+
+/* ─── Global custom cursor ───────────────────────── */
+@media (hover: hover) and (pointer: fine) {
+  * { cursor: none !important; }
+}
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+body.cursor-ready .cursor-dot,
+body.cursor-ready .cursor-ring { opacity: 1; }
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3ccbda;
+  transition: transform 0.2s ease, opacity 0.4s ease;
+}
+
+.cursor-dot.dot-hover {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(60, 203, 218, 0.5);
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, opacity 0.4s ease;
+}
+
+.cursor-ring.ring-hover {
+  width: 56px;
+  height: 56px;
+  border-color: rgba(60, 203, 218, 0.7);
+}
+
+@media (max-width: 768px) {
+  * { cursor: auto !important; }
+  .cursor-dot,
+  .cursor-ring { display: none !important; }
+}
