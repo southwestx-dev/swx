@@ -610,7 +610,7 @@ const LOGOS = [
   { src: '/logo-rptu.png',             w: 129, h: 42, alt: 'RPTU' },
   { src: '/logo-trier.png',            w: 254, h: 48, alt: 'Trier University of Applied Sciences' },
   { src: '/whu.png',                   w: 120, h: 48, alt: 'WHU – Otto Beisheim School of Management' },
-  { src: '/triathlon_logo_rot.png',    w:  87, h: 48, alt: 'triathlon' },
+  { src: '/triathlon_logo_rot.png',    w: 103, h: 48, alt: 'triathlon' },
 ]
 const LOGOS_DOUBLED = [...LOGOS, ...LOGOS]
 
