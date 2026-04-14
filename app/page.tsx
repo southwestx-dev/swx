@@ -606,9 +606,11 @@ function Programs() {
 /* ─── Research Institutions ──────────────────────── */
 // Shared logo list — also used by Partners marquee
 const LOGOS = [
-  { src: '/logo-max-planck.png', w: 265, h: 48, alt: 'Max-Planck-Innovation' },
-  { src: '/logo-rptu.png',       w: 129, h: 42, alt: 'RPTU' },
-  { src: '/logo-trier.png',      w: 254, h: 48, alt: 'Trier University of Applied Sciences' },
+  { src: '/logo-max-planck.png',       w: 265, h: 48, alt: 'Max-Planck-Innovation' },
+  { src: '/logo-rptu.png',             w: 129, h: 42, alt: 'RPTU' },
+  { src: '/logo-trier.png',            w: 254, h: 48, alt: 'Trier University of Applied Sciences' },
+  { src: '/whu.png',                   w: 120, h: 48, alt: 'WHU – Otto Beisheim School of Management' },
+  { src: '/triathlon_logo_rot.png',    w:  87, h: 48, alt: 'triathlon' },
 ]
 const LOGOS_DOUBLED = [...LOGOS, ...LOGOS]
 
