@@ -125,6 +125,7 @@ export default function StartupJourneyPage() {
           <p>The journey is built as a connected system. Talents become future founders, teams become startups, and startups gain the structure, support and access needed to scale.</p>
         </SectionIntro>
         {/* Process diagram */}
+        <div style={{ background: '#f6f3ef' }}>
         <div style={{
           maxWidth: 'var(--content-max-w)',
           margin: '0 auto',
@@ -135,6 +136,7 @@ export default function StartupJourneyPage() {
             alt="SouthwestX Startup Journey Process diagram"
             style={{ width: '100%', height: 'auto', borderRadius: r(16) }}
           />
+        </div>
         </div>
 
         <JourneySlider />
