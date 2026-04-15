@@ -6,6 +6,7 @@ import CallToAction from '../components/CallToAction'
 import { r, TEAL, DARK, W10 } from '../lib/tokens'
 import SectionIntro from '../components/SectionIntro'
 import Pullquote from '../components/Pullquote'
+import StatsCounter from '../components/StatsCounter'
 import TeamSection from './TeamSection'
 import TextImage from '../components/TextImage'
 
@@ -129,6 +130,12 @@ export default function AboutPage() {
         <Pullquote paragraphs={[
           'southwestX connects research, entrepreneurship and industry to enable structured innovation.',
           'We operate as a platform that turns ideas into validated solutions and scalable impact.',
+        ]} />
+        <StatsCounter stats={[
+          { value: '40+',  label: 'Partner organizations' },
+          { value: '100%', label: 'Focus on deep tech' },
+          { value: '24',   label: 'Active programs per year' },
+          { value: '134×', label: 'Average portfolio growth' },
         ]} />
         <TeamSection />
         <TextImage
