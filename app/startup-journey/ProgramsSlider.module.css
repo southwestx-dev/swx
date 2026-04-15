@@ -85,17 +85,59 @@
   flex-direction: column;
   justify-content: flex-end;
   cursor: pointer;
-  text-decoration: none;
+  position: relative;
+  overflow: hidden;
   background: #efe9e0;
-  transition: transform 0.35s ease, filter 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
 }
 
-.card:hover {
-  transform: translateY(-10px);
-  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.18));
+.card:hover,
+.cardActive {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.18);
+  background: #000;
 }
+
+.cardImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.card:hover .cardImg,
+.cardActive .cardImg { opacity: 0.3; }
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.5) 100%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.card:hover .cardOverlay,
+.cardActive .cardOverlay { opacity: 1; }
+
+.cardTeal {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(225deg, rgba(60,203,218,0.3) 0%, transparent 45%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.card:hover .cardTeal,
+.cardActive .cardTeal { opacity: 1; }
 
 .cardContent {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -107,7 +149,10 @@
   line-height: 1.2;
   margin: 0;
   color: #0a0a0a;
+  transition: color 0.25s ease;
 }
+.card:hover .title,
+.cardActive .title { color: #ffffff; }
 
 .desc {
   font-size: 16px;
@@ -115,7 +160,10 @@
   line-height: 1.6;
   margin: 0;
   color: #404040;
+  transition: color 0.25s ease;
 }
+.card:hover .desc,
+.cardActive .desc { color: rgba(255,255,255,0.7); }
 
 /* ── Navigation ── */
 .nav {
