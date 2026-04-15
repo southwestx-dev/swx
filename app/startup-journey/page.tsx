@@ -2,6 +2,7 @@
 
 import Nav from '../components/Nav'
 import { r, TEAL, DARK, W10 } from '../lib/tokens'
+import styles from './IntroText.module.css'
 
 /* ─── Hero ───────────────────────────────────────── */
 function Hero() {
@@ -105,6 +106,27 @@ function Hero() {
   )
 }
 
+/* ─── Intro Text ─────────────────────────────────── */
+function IntroText() {
+  return (
+    <section className={styles.section}>
+      <div className={styles.inner}>
+        <h2 className={styles.headline}>
+          One journey.<br />Multiple entry points.
+        </h2>
+        <div className={styles.body}>
+          <p>
+            SouthwestX builds entrepreneurial pathways across the full startup lifecycle. From early exposure and idea development to venture building, customer access and international growth, each stage is supported by formats designed for a specific level of maturity.
+          </p>
+          <p>
+            The journey is built as a connected system. Talents become future founders, teams become startups, and startups gain the structure, support and access needed to scale.
+          </p>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 /* ─── Page ───────────────────────────────────────── */
 export default function StartupJourneyPage() {
   return (
@@ -112,7 +134,7 @@ export default function StartupJourneyPage() {
       <Nav />
       <main>
         <Hero />
-        {/* More sections to come */}
+        <IntroText />
       </main>
     </>
   )
