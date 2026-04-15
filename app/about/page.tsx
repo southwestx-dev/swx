@@ -6,6 +6,7 @@ import CallToAction from '../components/CallToAction'
 import { r, TEAL, DARK, W10 } from '../lib/tokens'
 import SectionIntro from '../components/SectionIntro'
 import TouchpointsSection from '../components/TouchpointsSection'
+import MediaPlaceholder from '../components/MediaPlaceholder'
 import Pullquote from '../components/Pullquote'
 import StatsCounter from '../components/StatsCounter'
 import TeamSection from './TeamSection'
@@ -128,6 +129,7 @@ export default function AboutPage() {
           <p>southwestX is a cross-border innovation ecosystem connecting startups, research institutions and industry partners across Germany and France. We believe the next generation of world-changing companies will be built on deep scientific foundations.</p>
           <p>We provide the structure, mentorship and access that transforms early-stage ideas into scalable DeepTech ventures — and help established companies stay at the frontier of innovation.</p>
         </SectionIntro>
+        <MediaPlaceholder />
         <TouchpointsSection />
         <Pullquote paragraphs={[
           'southwestX connects research, entrepreneurship and industry to enable structured innovation.',
