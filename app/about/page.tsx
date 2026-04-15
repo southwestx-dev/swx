@@ -16,10 +16,13 @@ function Hero() {
       justifyContent: 'center',
       overflow: 'hidden',
     }}>
-      {/* Background image */}
-      <img
-        src="/img-networking.jpg"
-        alt=""
+      {/* Background video */}
+      <video
+        src="/hero-about.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
         aria-hidden="true"
         style={{
           position: 'absolute', inset: 0,
