@@ -3,6 +3,7 @@
 import Nav from '../components/Nav'
 import { r, TEAL, DARK, W10 } from '../lib/tokens'
 import SectionIntro from '../components/SectionIntro'
+import JourneySlider from './JourneySlider'
 
 /* ─── Hero ───────────────────────────────────────── */
 function Hero() {
@@ -123,6 +124,7 @@ export default function StartupJourneyPage() {
           <p>SouthwestX builds entrepreneurial pathways across the full startup lifecycle. From early exposure and idea development to venture building, customer access and international growth, each stage is supported by formats designed for a specific level of maturity.</p>
           <p>The journey is built as a connected system. Talents become future founders, teams become startups, and startups gain the structure, support and access needed to scale.</p>
         </SectionIntro>
+        <JourneySlider />
       </main>
     </>
   )
