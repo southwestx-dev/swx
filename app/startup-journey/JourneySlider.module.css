@@ -17,7 +17,7 @@
 }
 .track::-webkit-scrollbar { display: none; }
 
-/* ── Card base ── */
+/* ── Card ── */
 .card {
   flex: 0 0 auto;
   width: 428px;
@@ -27,72 +27,80 @@
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12);
+  background: #efe9e0;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
 }
 
-/* ── Dark card (first / active) ── */
-.cardDark {
-  justify-content: space-between;
+.card:hover,
+.cardActive {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.18);
   background: #000;
 }
-.cardDarkImg {
+
+/* ── Background image — hidden by default, revealed on hover/active ── */
+.cardImg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.35;
   border-radius: 16px;
-  transition: opacity 0.3s ease;
-}
-.cardDark:hover .cardDarkImg {
-  opacity: 0.25;
-}
-.cardDarkOverlay {
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.55) 100%);
-  pointer-events: none;
-}
-/* teal glow on hover */
-.cardDark::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  background: linear-gradient(225deg, rgba(60,203,218,0.25) 0%, transparent 50%);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.35s ease;
   pointer-events: none;
 }
-.cardDark:hover::after { opacity: 1; }
-
-/* ── Light card (ivory) ── */
-.cardLight {
-  background: #efe9e0;
+.card:hover .cardImg,
+.cardActive .cardImg {
+  opacity: 0.3;
 }
-.cardLight::after {
-  content: '';
+
+/* ── Gradient overlay — fades in with image ── */
+.cardOverlay {
   position: absolute;
   inset: 0;
   border-radius: 16px;
-  background: linear-gradient(225deg, rgba(60,203,218,0.18) 0%, transparent 55%);
+  background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.5) 100%);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.35s ease;
   pointer-events: none;
 }
-.cardLight:hover::after { opacity: 1; }
+.card:hover .cardOverlay,
+.cardActive .cardOverlay {
+  opacity: 1;
+}
 
-/* ── Card content ── */
+/* ── Teal corner accent ── */
+.cardTeal {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(225deg, rgba(60,203,218,0.3) 0%, transparent 45%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.card:hover .cardTeal,
+.cardActive .cardTeal {
+  opacity: 1;
+}
+
+/* ── Step label ── */
+.step {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #3ccbda;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+/* ── Card content (bottom) ── */
 .cardContent {
   position: relative;
   display: flex;
@@ -106,27 +114,25 @@
   font-weight: 400;
   line-height: 1.2;
   margin: 0;
+  color: #0a0a0a;
+  transition: color 0.25s ease;
 }
-.titleDark  { color: #ffffff; }
-.titleLight { color: #0a0a0a; }
+.card:hover .title,
+.cardActive .title {
+  color: #ffffff;
+}
 
 .desc {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.6;
   margin: 0;
+  color: #404040;
+  transition: color 0.25s ease;
 }
-.descDark  { color: rgba(255,255,255,0.7); }
-.descLight { color: #404040; }
-
-/* ── Step number (top-left on dark card) ── */
-.step {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #3ccbda;
-  position: relative;
+.card:hover .desc,
+.cardActive .desc {
+  color: rgba(255,255,255,0.7);
 }
 
 /* ── Navigation ── */

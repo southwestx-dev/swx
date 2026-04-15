@@ -8,7 +8,6 @@ const CARDS = [
     step: 'Stage 01',
     title: 'Sensibilisation',
     desc: 'Initial exposure to entrepreneurship, innovation and market opportunities.',
-    dark: true,
   },
   {
     step: 'Stage 02',
@@ -43,6 +42,7 @@ const DOT_COUNT   = 4     // 6 cards, ~3 visible → 4 scroll positions
 export default function JourneySlider() {
   const scrollRef = useRef<HTMLDivElement>(null)
   const [activeIdx, setActiveIdx] = useState(0)
+  const [activeCard, setActiveCard] = useState<number | null>(null)
 
   const scrollToIdx = (idx: number) => {
     const next = Math.max(0, Math.min(idx, DOT_COUNT - 1))
@@ -54,29 +54,29 @@ export default function JourneySlider() {
     <section className={styles.section}>
       {/* Cards */}
       <div ref={scrollRef} className={styles.track}>
-        {CARDS.map((card, i) =>
-          card.dark ? (
-            <div key={i} className={`${styles.card} ${styles.cardDark}`}>
-              <img src="/img-meeting.jpg" alt="" className={styles.cardDarkImg} />
-              <div className={styles.cardDarkOverlay} />
-              {/* Step — top */}
-              <span className={styles.step}>{card.step}</span>
-              {/* Title + desc — bottom */}
-              <div className={styles.cardContent}>
-                <h3 className={`${styles.title} ${styles.titleDark}`}>{card.title}</h3>
-                <p className={`${styles.desc} ${styles.descDark}`}>{card.desc}</p>
-              </div>
+        {CARDS.map((card, i) => (
+          <div
+            key={i}
+            className={`${styles.card} ${activeCard === i ? styles.cardActive : ''}`}
+            onClick={() => setActiveCard(i === activeCard ? null : i)}
+          >
+            {/* Background image — hidden by default, revealed on hover/active */}
+            <img src="/img-meeting.jpg" alt="" className={styles.cardImg} />
+            {/* Gradient overlay */}
+            <div className={styles.cardOverlay} />
+            {/* Teal corner accent */}
+            <div className={styles.cardTeal} />
+
+            {/* Step label — top */}
+            <span className={styles.step}>{card.step}</span>
+
+            {/* Title + desc — bottom */}
+            <div className={styles.cardContent}>
+              <h3 className={styles.title}>{card.title}</h3>
+              <p className={styles.desc}>{card.desc}</p>
             </div>
-          ) : (
-            <div key={i} className={`${styles.card} ${styles.cardLight}`}>
-              <div className={styles.cardContent}>
-                <span className={styles.step}>{card.step}</span>
-                <h3 className={`${styles.title} ${styles.titleLight}`}>{card.title}</h3>
-                <p className={`${styles.desc} ${styles.descLight}`}>{card.desc}</p>
-              </div>
-            </div>
-          )
-        )}
+          </div>
+        ))}
       </div>
 
       {/* Navigation */}
