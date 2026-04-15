@@ -1,6 +1,7 @@
 import styles from './SectionIntro.module.css'
 
 interface Props {
+  eyebrow?: string               // optional eyebrow above headline
   headline: string
   headlineSize?: number          // px, default 56
   headlineColor?: string         // default #0a0a0a
@@ -11,6 +12,7 @@ interface Props {
 }
 
 export default function SectionIntro({
+  eyebrow,
   headline,
   headlineSize = 56,
   headlineColor = '#0a0a0a',
@@ -28,12 +30,15 @@ export default function SectionIntro({
   return (
     <section className={styles.section} style={sectionStyle}>
       <div className={styles.inner}>
-        <h2
-          className={styles.headline}
-          style={{ fontSize: `${headlineSize}px`, color: headlineColor }}
-        >
-          {headline}
-        </h2>
+        <div>
+          {eyebrow && <p className={styles.eyebrow}>{eyebrow}</p>}
+          <h2
+            className={styles.headline}
+            style={{ fontSize: `${headlineSize}px`, color: headlineColor }}
+          >
+            {headline}
+          </h2>
+        </div>
         <div className={styles.body}>
           {children}
         </div>

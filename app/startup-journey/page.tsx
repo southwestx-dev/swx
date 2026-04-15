@@ -142,6 +142,15 @@ export default function StartupJourneyPage() {
         </div>
         </div>
 
+        <SectionIntro
+          eyebrow="How the journey works"
+          headline={'Six stages.\nOne connected system.'}
+          headlineSize={56}
+          paddingTop={80}
+          paddingBottom={64}
+        >
+          <p>Each stage of the journey addresses a different step in startup development — from first exposure and entrepreneurial qualification to venture building, market traction and international scale. Explore the stages to see which formats match your current phase.</p>
+        </SectionIntro>
         <JourneySlider />
         <SupportSection />
         <ProgramsSlider />
