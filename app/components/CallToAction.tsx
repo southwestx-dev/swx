@@ -22,14 +22,14 @@ export default function CallToAction() {
             Get in Touch
           </p>
           <h2 style={{
-            fontSize: 'clamp(2.5rem, 5vw, 4.3125rem)',
-            fontWeight: 700, lineHeight: 1.1,
+            fontSize: '56px',
+            fontWeight: 700, lineHeight: 1.05, letterSpacing: '-0.02em',
             color: '#ffffff', margin: 0,
           }}>
             Explore your next step
           </h2>
           <p style={{
-            fontSize: '23px', fontWeight: 400, lineHeight: 1.6,
+            fontSize: '18px', fontWeight: 400, lineHeight: 1.6,
             color: 'rgba(255,255,255,0.7)', margin: 0,
           }}>
             Not sure where you stand? We help you identify the right entry point.
@@ -43,9 +43,9 @@ export default function CallToAction() {
           className="btn-hover"
           style={{
             display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-            height: '80px', padding: '0 40px', borderRadius: '8px',
+            height: '48px', padding: '0 24px', borderRadius: '8px',
             background: '#3ccbda', border: '1px solid rgba(255,255,255,0.1)',
-            color: '#0a0a0a', fontSize: '23px', fontWeight: 700,
+            color: '#0a0a0a', fontSize: '14px', fontWeight: 700,
             textDecoration: 'none', whiteSpace: 'nowrap',
           }}
         >
