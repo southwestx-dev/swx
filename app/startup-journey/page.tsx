@@ -1,6 +1,7 @@
 'use client'
 
 import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 import { r, TEAL, DARK, W10 } from '../lib/tokens'
 import SectionIntro from '../components/SectionIntro'
 import JourneySlider from './JourneySlider'
@@ -145,6 +146,7 @@ export default function StartupJourneyPage() {
         <SupportSection />
         <ProgramsSlider />
       </main>
+      <Footer />
     </>
   )
 }

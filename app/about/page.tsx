@@ -1,6 +1,7 @@
 'use client'
 
 import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 import { r, TEAL, DARK, W10 } from '../lib/tokens'
 import SectionIntro from '../components/SectionIntro'
 
@@ -123,6 +124,7 @@ export default function AboutPage() {
           <p>We provide the structure, mentorship and access that transforms early-stage ideas into scalable DeepTech ventures — and help established companies stay at the frontier of innovation.</p>
         </SectionIntro>
       </main>
+      <Footer />
     </>
   )
 }
