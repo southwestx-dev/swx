@@ -20,7 +20,7 @@ export default function SupportSection() {
             href="#contact"
             data-contact-modal
             className="btn-hover-light"
-            style={{ ...lightGhostBtnStyle, width: '30%', justifyContent: 'center' }}
+            style={{ ...lightGhostBtnStyle, padding: '0 2rem' }}
           >
             Talk to the Startup Team
           </a>
