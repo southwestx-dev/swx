@@ -1,0 +1,98 @@
+.section {
+  background: #ffffff;
+  padding: 120px 64px;
+}
+
+.inner {
+  max-width: var(--content-max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.reversed {
+  /* image on right — grid order is handled in JSX */
+}
+
+/* ── Image ── */
+.imgWrap {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.imgOverlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(209deg, #3ccbda 0%, rgba(148, 183, 255, 0) 39%);
+}
+
+/* ── Content ── */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.eyebrow {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #3ccbda;
+  margin: 0;
+}
+
+.headline {
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #171717;
+  margin: 0;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.body p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #404040;
+  margin: 0;
+}
+
+@media (max-width: 1100px) {
+  .inner { gap: 48px; }
+  .headline { font-size: clamp(2rem, 5vw, 56px); }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 80px 32px; }
+  .inner { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .section { padding: 64px 20px; }
+}

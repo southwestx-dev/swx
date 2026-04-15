@@ -7,6 +7,7 @@ import { r, TEAL, DARK, W10 } from '../lib/tokens'
 import SectionIntro from '../components/SectionIntro'
 import Pullquote from '../components/Pullquote'
 import TeamSection from './TeamSection'
+import TextImage from '../components/TextImage'
 
 /* ─── Hero ───────────────────────────────────────── */
 function Hero() {
@@ -130,6 +131,16 @@ export default function AboutPage() {
           'We operate as a platform that turns ideas into validated solutions and scalable impact.',
         ]} />
         <TeamSection />
+        <TextImage
+          eyebrow="Our Mission"
+          headline={'Science meets\nentrepreneurship'}
+          paragraphs={[
+            'southwestX was founded on the belief that deep scientific knowledge and entrepreneurial ambition are strongest when combined. We create the structures that allow researchers, founders and industry partners to build together.',
+            'Across our programs, we bring the right people together at the right moment — providing access to mentorship, funding networks and cross-border expertise that accelerates the path from idea to impact.',
+          ]}
+          imgSrc="/img-networking.jpg"
+          imgAlt="Team collaborating"
+        />
         <CallToAction />
       </main>
       <Footer />
