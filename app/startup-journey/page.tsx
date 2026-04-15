@@ -124,6 +124,19 @@ export default function StartupJourneyPage() {
           <p>SouthwestX builds entrepreneurial pathways across the full startup lifecycle. From early exposure and idea development to venture building, customer access and international growth, each stage is supported by formats designed for a specific level of maturity.</p>
           <p>The journey is built as a connected system. Talents become future founders, teams become startups, and startups gain the structure, support and access needed to scale.</p>
         </SectionIntro>
+        {/* Process diagram */}
+        <div style={{
+          maxWidth: 'var(--content-max-w)',
+          margin: '0 auto',
+          padding: `0 ${r(64)} ${r(80)}`,
+        }}>
+          <img
+            src="/Startup Journey_image.png"
+            alt="SouthwestX Startup Journey Process diagram"
+            style={{ width: '100%', height: 'auto', borderRadius: r(16) }}
+          />
+        </div>
+
         <JourneySlider />
       </main>
     </>
