@@ -33,7 +33,6 @@ const DOT_COUNT   = 3
 export default function ProgramsSlider() {
   const scrollRef = useRef<HTMLDivElement>(null)
   const [activeIdx, setActiveIdx] = useState(0)
-  const [activeCard, setActiveCard] = useState<number | null>(null)
 
   const scrollToIdx = (idx: number) => {
     const next = Math.max(0, Math.min(idx, DOT_COUNT - 1))
@@ -62,19 +61,12 @@ export default function ProgramsSlider() {
       {/* Cards */}
       <div ref={scrollRef} className={styles.track}>
         {CARDS.map((card, i) => (
-          <div
-            key={i}
-            className={`${styles.card} ${activeCard === i ? styles.cardActive : ''}`}
-            onClick={() => setActiveCard(i === activeCard ? null : i)}
-          >
-            <img src="/img-meeting.jpg" alt="" className={styles.cardImg} />
-            <div className={styles.cardOverlay} />
-            <div className={styles.cardTeal} />
+          <a key={i} href="#" className={styles.card}>
             <div className={styles.cardContent}>
               <h3 className={styles.title}>{card.title}</h3>
               <p className={styles.desc}>{card.desc}</p>
             </div>
-          </div>
+          </a>
         ))}
       </div>
 
