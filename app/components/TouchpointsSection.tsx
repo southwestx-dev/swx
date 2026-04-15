@@ -13,33 +13,24 @@ const CARDS = [
     title: 'Venture Clienting',
     desc: 'A systematic approach to identify, test and integrate startup solutions through pilots and real use cases.',
   },
-  {
-    title: 'Co-Creation Labs',
-    desc: 'Hands-on environments where companies, startups and researchers jointly develop and prototype solutions.',
-  },
-  {
-    title: 'Think Tank & Insights',
-    desc: 'Continuous analysis of trends, technologies and market developments to inform strategic decision-making.',
-  },
 ]
 
 export default function TouchpointsSection() {
   return (
     <section className={styles.section}>
-      {/* Header */}
-      <div className={styles.header}>
-        <p className={styles.eyebrow}>Touchpoints</p>
-        <h2 className={styles.headline}>Where collaboration happens</h2>
-      </div>
-
-      {/* Scrollable card row */}
-      <div className={styles.track}>
-        {CARDS.map((card, i) => (
-          <div key={i} className={styles.card}>
-            <h3 className={styles.cardTitle}>{card.title}</h3>
-            <p className={styles.cardDesc}>{card.desc}</p>
-          </div>
-        ))}
+      <div className={styles.inner}>
+        <div className={styles.header}>
+          <p className={styles.eyebrow}>Touchpoints</p>
+          <h2 className={styles.headline}>Where collaboration happens</h2>
+        </div>
+        <div className={styles.grid}>
+          {CARDS.map((card, i) => (
+            <div key={i} className={styles.card}>
+              <h3 className={styles.cardTitle}>{card.title}</h3>
+              <p className={styles.cardDesc}>{card.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )
