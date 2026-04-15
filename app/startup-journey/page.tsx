@@ -5,6 +5,7 @@ import { r, TEAL, DARK, W10 } from '../lib/tokens'
 import SectionIntro from '../components/SectionIntro'
 import JourneySlider from './JourneySlider'
 import SupportSection from './SupportSection'
+import ProgramsSlider from './ProgramsSlider'
 
 /* ─── Hero ───────────────────────────────────────── */
 function Hero() {
@@ -142,6 +143,7 @@ export default function StartupJourneyPage() {
 
         <JourneySlider />
         <SupportSection />
+        <ProgramsSlider />
       </main>
     </>
   )
