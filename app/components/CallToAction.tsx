@@ -16,7 +16,7 @@ export default function CallToAction() {
         {/* Text block */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', width: '100%' }}>
           <p style={{
-            fontSize: '23px', fontWeight: 400, lineHeight: 1.6,
+            fontSize: '18px', fontWeight: 400, lineHeight: 1.6,
             color: '#3ccbda', margin: 0,
           }}>
             Get in Touch

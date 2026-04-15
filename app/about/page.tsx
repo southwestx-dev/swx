@@ -53,8 +53,7 @@ function Hero() {
       }}>
         {/* Eyebrow */}
         <p style={{
-          fontSize: r(14), fontWeight: 700, letterSpacing: '0.14em',
-          textTransform: 'uppercase', color: TEAL,
+          fontSize: r(18), fontWeight: 400, lineHeight: 1.6, color: TEAL,
           margin: 0,
         }}>
           About Us
