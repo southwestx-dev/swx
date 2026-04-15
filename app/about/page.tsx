@@ -18,7 +18,7 @@ function Hero() {
     }}>
       {/* Background video */}
       <video
-        src="/hero-about.mp4"
+        src="/hero-about-web.mp4"
         autoPlay
         muted
         loop
