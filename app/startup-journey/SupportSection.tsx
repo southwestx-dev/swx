@@ -19,7 +19,7 @@ export default function SupportSection() {
           <a
             href="#contact"
             data-contact-modal
-            className="btn-hover"
+            className="btn-hover-light"
             style={lightGhostBtnStyle}
           >
             Talk to the Startup Team
