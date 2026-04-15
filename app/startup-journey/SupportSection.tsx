@@ -1,4 +1,5 @@
 import styles from './SupportSection.module.css'
+import { lightGhostBtnStyle } from '../lib/tokens'
 
 export default function SupportSection() {
   return (
@@ -15,6 +16,14 @@ export default function SupportSection() {
             <p>Startups do not need to be part of a program to connect with SouthwestX. We support founders before, during and between programs — from early orientation to validation, go-to-market and financing.</p>
             <p>Whether teams are just getting started or already building their company, SouthwestX provides direct access to entrepreneurial sparring, relevant networks, potential customers, investors and the right next-step formats across the journey.</p>
           </div>
+          <a
+            href="#contact"
+            data-contact-modal
+            className="btn-hover"
+            style={lightGhostBtnStyle}
+          >
+            Talk to the Startup Team
+          </a>
         </div>
 
         {/* Right: image card */}
