@@ -7,32 +7,38 @@ const CARDS = [
   {
     step: 'Stage 01',
     title: 'Sensibilisation',
-    desc: 'Initial exposure to entrepreneurship, innovation and market opportunities.',
+    desc: 'Early exposure to entrepreneurship across universities and research environments. This phase creates first access, visibility and orientation for future founders.',
+    programs: 'Entrepreneurial Education, Support',
   },
   {
     step: 'Stage 02',
     title: 'Qualification',
-    desc: 'Assessment and refinement of skills, ideas and entrepreneurial readiness.',
+    desc: 'Foundational entrepreneurial skills are built through practical, interdisciplinary and low-barrier formats. The focus is on capability building before venture decisions become concrete.',
+    programs: 'Entrepreneurial Education, Ideation Modules, Community Enterprises',
   },
   {
     step: 'Stage 03',
     title: 'Ideation',
-    desc: 'Development and validation of ideas through structured exploration and team formation.',
+    desc: 'Ideas are developed, challenged and turned into concrete founder paths. Teams form, research potential becomes visible and early entrepreneurial experience begins.',
+    programs: 'Ideation Modules, Community Enterprises, Deep Tech Venture Camp, SWX Co-Founder Matching, Support',
   },
   {
     step: 'Stage 04',
     title: 'Pre-Seed',
-    desc: 'Transformation of validated ideas into early ventures with prototypes and initial business models.',
+    desc: 'The focus shifts from opportunity to execution: validating the business model, developing an MVP and preparing teams for incorporation and first funding steps.',
+    programs: 'SWX & Partners Launchpad, SWX Incubator, Support',
   },
   {
     step: 'Stage 05',
     title: 'Seed',
-    desc: 'Market entry with first customers, product-market fit and initial traction.',
+    desc: 'Startups strengthen customer access, investor readiness and market traction to move from validated venture to scalable company.',
+    programs: 'SWX Accelerator, Support',
   },
   {
     step: 'Stage 06',
-    title: 'Series A+',
-    desc: 'Scaling the venture through growth, international expansion and organizational development.',
+    title: 'Series A',
+    desc: 'Selected scale-ups enter a high-caliber growth environment with access to strategic networks, international markets and long-term European scaling opportunities.',
+    programs: 'Startup Leaders, SWX Accelerator, Support',
   },
 ]
 
@@ -70,10 +76,14 @@ export default function JourneySlider() {
             {/* Step label — top */}
             <span className={styles.step}>{card.step}</span>
 
-            {/* Title + desc — bottom */}
+            {/* Title + desc + programs — bottom */}
             <div className={styles.cardContent}>
               <h3 className={styles.title}>{card.title}</h3>
               <p className={styles.desc}>{card.desc}</p>
+              <p className={styles.programs}>
+                <span className={styles.programsLabel}>Programs: </span>
+                {card.programs}
+              </p>
             </div>
           </div>
         ))}
