@@ -17,8 +17,14 @@ export default function SupportSection() {
           </div>
         </div>
 
-        {/* Right: card placeholder */}
-        <div className={styles.card} />
+        {/* Right: image card */}
+        <div className={styles.card}>
+          <img
+            src="/img-networking.jpg"
+            alt="SouthwestX networking"
+            className={styles.cardImg}
+          />
+        </div>
 
       </div>
     </section>
