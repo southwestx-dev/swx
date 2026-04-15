@@ -4,6 +4,8 @@
 }
 
 .inner {
+  max-width: var(--content-max-w);
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;

@@ -39,6 +39,7 @@
   --ease-slow: 400ms ease;
 
   --max-w: 1200px;
+  --content-max-w: 1280px;  /* max width for page section content */
   --nav-h: 6rem;
 }
 
