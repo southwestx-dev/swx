@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react'
 import Nav from './components/Nav'
+import SectionIntro from './components/SectionIntro'
 import { r, TEAL, DARK, DARK2, W70, W10 } from './lib/tokens'
 
 // Base ghost button — extend with height / padding / fontSize
@@ -642,22 +643,21 @@ function EventsInsights() {
   }
 
   return (
-    <section id="events" style={{ background: '#ffffff', padding: `${r(192)} 0 ${r(96)}` }}>
-      {/* Two-column header */}
-      <div style={{ padding: `0 ${r(64)}`, display: 'flex', gap: r(40), alignItems: 'flex-start', marginBottom: r(96) }}>
-        <h2 style={{ flex: '1 0 0', fontSize: r(35), fontWeight: 400, lineHeight: 1.2, color: DARK2 }}>
-          Events and Insights
-        </h2>
-        <div className="ei-info-col" style={{ width: r(876), flexShrink: 0, display: 'flex', flexDirection: 'column', gap: r(48) }}>
-          <p style={{ fontSize: r(18), lineHeight: 1.6, color: DARK2 }}>
-            Discover upcoming events, key discussions and insights from the southwestX ecosystem. From conferences and demo days to research perspectives and innovation trends shaping Europe&apos;s DeepTech future.
-          </p>
-          <div style={{ display: 'flex', gap: 16 }}>
-            <a href="#" className="btn-hover-light" style={lightGhostBtnStyle}>View all Events</a>
-            <a href="#" className="btn-hover-light" style={lightGhostBtnStyle}>View all Insights</a>
-          </div>
+    <section id="events" style={{ background: '#ffffff', paddingBottom: r(96) }}>
+      <SectionIntro
+        headline="Events and Insights"
+        headlineSize={35}
+        headlineColor={DARK2}
+        background="#ffffff"
+        paddingTop={192}
+        paddingBottom={96}
+      >
+        <p>Discover upcoming events, key discussions and insights from the southwestX ecosystem. From conferences and demo days to research perspectives and innovation trends shaping Europe&apos;s DeepTech future.</p>
+        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+          <a href="#" className="btn-hover-light" style={lightGhostBtnStyle}>View all Events</a>
+          <a href="#" className="btn-hover-light" style={lightGhostBtnStyle}>View all Insights</a>
         </div>
-      </div>
+      </SectionIntro>
 
       {/* Scrollable cards */}
       <div ref={scrollRef}
@@ -727,10 +727,6 @@ function EventsInsights() {
 
       <style>{`
         .events-scroll::-webkit-scrollbar { display: none; }
-        @media (max-width: 1100px) {
-          #events > div:first-child { flex-direction: column !important; }
-          .ei-info-col { width: 100% !important; }
-        }
         @media (max-width: 900px) {
           #events { padding: 100px 0 64px !important; }
           #events > div:first-child { padding: 0 32px !important; margin-bottom: 64px !important; }
