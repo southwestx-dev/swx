@@ -35,9 +35,9 @@
 }
 
 .headline {
-  font-size: clamp(2.5rem, 5vw, 4.3125rem);
+  font-size: 56px;
   font-weight: 400;
-  line-height: 1.1;
+  line-height: 1.05;
   letter-spacing: -0.02em;
   color: #171717;
   margin: 0;
@@ -62,7 +62,6 @@
   background: #fafafa;
   border-radius: 16px;
   height: 480px;
-  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
   position: relative;
   overflow: hidden;
 }
