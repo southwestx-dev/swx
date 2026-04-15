@@ -96,8 +96,8 @@ export default function TeamSection() {
 
             {/* Bottom content */}
             <div className={styles.cardContent}>
-              <span className={styles.roleBadge}>{person.role}</span>
               <h3 className={styles.name}>{person.name}</h3>
+              <span className={styles.roleBadge}>{person.role}</span>
             </div>
           </div>
         ))}
