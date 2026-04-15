@@ -6,15 +6,15 @@ import { r, TEAL, DARK2, W70, W10 } from '../lib/tokens'
 /* ─── Mega Menu Data ─────────────────────────────── */
 const MEGA_DATA: Record<string, {
   heading: string; image: string; desc: string; cta: string
-  items: { title: string; desc: string }[]
+  items: { title: string; desc: string; href?: string }[]
 }> = {
   'For Startups': {
     heading: 'For Startups', image: '/img-meeting.jpg',
     desc: 'From idea to market-ready DeepTech company. Access structured programs, mentors and cross-border funding across the Franco-German ecosystem.',
     cta: 'Get in touch',
     items: [
-      { title: 'Startup Journey',      desc: 'From early validation to international scaling.' },
-      { title: 'Programmes & Batches', desc: 'Structured programs for every stage of growth.' },
+      { title: 'Startup Journey',      desc: 'From early validation to international scaling.',  href: '/startup-journey' },
+      { title: 'Programmes & Batches', desc: 'Structured programs for every stage of growth.',   href: '/programs' },
     ],
   },
   'For Companies': {
@@ -53,7 +53,7 @@ const MEGA_DATA: Record<string, {
     desc: 'southwestX is built on the conviction that Europe\'s strongest competitive advantage lies in its scientific depth.',
     cta: 'Learn more',
     items: [
-      { title: 'SouthwestX',        desc: 'Our mission and what drives us.' },
+      { title: 'SouthwestX',        desc: 'Our mission and what drives us.',      href: '/about' },
       { title: 'Locations',         desc: 'Where we operate across Europe.' },
       { title: 'Team',              desc: 'The people behind the ecosystem.' },
       { title: 'Mentors & Experts', desc: 'Our network of advisors and specialists.' },
@@ -238,7 +238,7 @@ export default function Nav() {
             {/* Right panel */}
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: r(28), paddingTop: r(48) }}>
               {megaData.items.map((item, i) => (
-                <a key={i} href="#" className="mega-item" style={{
+                <a key={i} href={item.href ?? '#'} className="mega-item" style={{
                   display: 'flex', alignItems: 'center', gap: r(24),
                   textDecoration: 'none',
                   borderBottom: i < megaData.items.length - 1 ? `1px solid ${W10}` : 'none',
