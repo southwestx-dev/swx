@@ -8,22 +8,32 @@ const CARDS = [
   {
     title: 'Ideation Modules',
     desc: 'Develop ideas, test directions and find the right co-founders.',
+    date: '12. – 13. March 2026',
+    loc: 'Stuttgart',
   },
   {
     title: 'Deep Tech Venture Camp',
     desc: 'Turn scientific potential into venture-ready spin-off cases.',
+    date: '6. – 7. November 2026',
+    loc: 'Cologne',
   },
   {
     title: 'Launchpad',
     desc: 'Move from idea to MVP and prepare for founding.',
+    date: 'April 2026',
+    loc: 'Karlsruhe',
   },
   {
     title: 'Incubator',
     desc: 'Build with close support, venture expertise and early-stage funding.',
+    date: 'Rolling intake',
+    loc: 'Stuttgart',
   },
   {
     title: 'Accelerator',
     desc: 'Gain customer access, investor readiness and momentum for scale.',
+    date: 'September 2026',
+    loc: 'Frankfurt',
   },
 ]
 
@@ -70,6 +80,12 @@ export default function ProgramsSlider() {
             <img src="/img-meeting.jpg" alt="" className={styles.cardImg} />
             <div className={styles.cardOverlay} />
             <div className={styles.cardTeal} />
+            {/* Date badge — top */}
+            <div className={styles.badge}>
+              <span className={styles.badgeDot} />
+              <span className={styles.badgeDate}>{card.date}</span>
+              <span className={styles.badgeLoc}> | {card.loc}</span>
+            </div>
             <div className={styles.cardContent}>
               <h3 className={styles.title}>{card.title}</h3>
               <p className={styles.desc}>{card.desc}</p>
