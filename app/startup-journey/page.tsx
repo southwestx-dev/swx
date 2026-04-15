@@ -2,6 +2,7 @@
 
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
+import CallToAction from '../components/CallToAction'
 import { r, TEAL, DARK, W10 } from '../lib/tokens'
 import SectionIntro from '../components/SectionIntro'
 import JourneySlider from './JourneySlider'
@@ -145,6 +146,7 @@ export default function StartupJourneyPage() {
         <JourneySlider />
         <SupportSection />
         <ProgramsSlider />
+        <CallToAction />
       </main>
       <Footer />
     </>
