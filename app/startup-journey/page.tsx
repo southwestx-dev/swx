@@ -4,6 +4,7 @@ import Nav from '../components/Nav'
 import { r, TEAL, DARK, W10 } from '../lib/tokens'
 import SectionIntro from '../components/SectionIntro'
 import JourneySlider from './JourneySlider'
+import SupportSection from './SupportSection'
 
 /* ─── Hero ───────────────────────────────────────── */
 function Hero() {
@@ -140,6 +141,7 @@ export default function StartupJourneyPage() {
         </div>
 
         <JourneySlider />
+        <SupportSection />
       </main>
     </>
   )
