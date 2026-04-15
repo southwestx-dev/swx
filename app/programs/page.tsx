@@ -3,6 +3,7 @@
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import CallToAction from '../components/CallToAction'
+import ProgramsList from './ProgramsList'
 import { r, TEAL, DARK, W10 } from '../lib/tokens'
 
 /* ─── Hero ───────────────────────────────────────── */
@@ -108,6 +109,7 @@ export default function ProgramsPage() {
       <Nav />
       <main>
         <Hero />
+        <ProgramsList />
       </main>
       <CallToAction />
       <Footer />
