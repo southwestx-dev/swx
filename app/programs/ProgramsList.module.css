@@ -19,6 +19,14 @@
   align-items: start;
 }
 
+.eyebrow {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #3ccbda;
+  margin: 0 0 16px;
+}
+
 .headline {
   font-size: 56px;
   font-weight: 400;

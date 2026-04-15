@@ -56,6 +56,7 @@ export default function ProgramsList() {
 
         {/* Header */}
         <div className={styles.header}>
+          <p className={styles.eyebrow}>Programs</p>
           <h2 className={styles.headline}>Programs Along the Journey</h2>
           <p className={styles.subtext}>
             Each stage is supported by dedicated programs. Find the formats that match
