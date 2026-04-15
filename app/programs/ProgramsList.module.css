@@ -20,19 +20,19 @@
 }
 
 .headline {
-  font-size: clamp(3rem, 6vw, 6.6875rem);
+  font-size: 56px;
   font-weight: 400;
-  line-height: 1;
+  line-height: 1.05;
   letter-spacing: -0.02em;
   color: #0a0a0a;
   margin: 0;
 }
 
 .subtext {
-  font-size: 23px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.6;
-  color: #171717;
+  color: #0a0a0a;
   margin: 0;
   padding-top: 8px;
 }
