@@ -62,8 +62,8 @@
 .track {
   display: flex;
   gap: 16px;
-  padding: 32px 64px;
-  margin: -32px 0;
+  padding: 32px 64px 80px;
+  margin: -32px 0 -80px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-padding-left: 64px;
