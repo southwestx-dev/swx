@@ -645,9 +645,9 @@ function EventsInsights() {
   return (
     <section id="events" style={{ background: '#ffffff', paddingBottom: r(96) }}>
       <SectionIntro
-        headline="Events and Insights"
+        headline="Events und Insights from our Ecosystem"
         headlineSize={35}
-        headlineColor={DARK2}
+        headlineColor={DARK}
         background="#ffffff"
         paddingTop={192}
         paddingBottom={96}
