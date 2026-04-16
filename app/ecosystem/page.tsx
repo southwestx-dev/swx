@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 import CallToAction from '../components/CallToAction'
 import { r, TEAL, DARK, W10 } from '../lib/tokens'
 import SectionIntro from '../components/SectionIntro'
+import PerspectivesSection from './PerspectivesSection'
 
 /* ─── Hero ───────────────────────────────────────── */
 function Hero() {
@@ -112,6 +113,7 @@ export default function EcosystemPage() {
           <p>southwestX brings together the most relevant actors across the Franco-German innovation corridor — research institutions, established companies, startups and investors — into one structured, cross-border ecosystem.</p>
           <p>Our network is designed to create meaningful connections, accelerate technology transfer and turn scientific excellence into market-ready solutions that scale.</p>
         </SectionIntro>
+        <PerspectivesSection />
         <CallToAction />
       </main>
       <Footer />
