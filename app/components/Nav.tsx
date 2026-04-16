@@ -22,7 +22,7 @@ const MEGA_DATA: Record<string, {
     desc: 'Turn technological potential into real business innovation. Connect with DeepTech startups and research institutions in Europe\'s leading innovation corridor.',
     cta: 'Get in touch',
     items: [
-      { title: 'Innovation Journey',    desc: 'Structured corporate innovation programs.' },
+      { title: 'Innovation Journey',    desc: 'Structured corporate innovation programs.',  href: '/innovation-journey' },
       { title: 'Collaboration Formats', desc: 'Co-creation with startups and research.' },
       { title: 'Case Studies',          desc: 'Real results from our ecosystem partnerships.' },
       { title: 'Partnership',           desc: 'Become a long-term ecosystem partner.' },
