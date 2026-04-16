@@ -36,6 +36,13 @@ const PROGRAMS = [
     stage: 'Seed',
     img: '/img-meeting.jpg',
   },
+  {
+    name: 'Startup Leaders',
+    desc: 'Connect established companies with Europe\'s most advanced DeepTech startups at Series A and beyond.',
+    stage: 'Series A+',
+    img: '/img-networking.jpg',
+    href: '/programs/startup-leaders',
+  },
 ]
 
 const PREVIEW_COUNT = 3
@@ -97,7 +104,7 @@ export default function ProgramsList() {
                     <h3 className={styles.programName}>{program.name}</h3>
                     <p className={styles.programDesc}>{program.desc}</p>
                   </div>
-                  <a href="#" className={`${styles.learnMore} btn-hover-light`}>
+                  <a href={program.href ?? '#'} className={`${styles.learnMore} btn-hover-light`}>
                     Learn more
                   </a>
                 </div>
