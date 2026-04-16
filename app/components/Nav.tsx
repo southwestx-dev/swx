@@ -33,6 +33,7 @@ const MEGA_DATA: Record<string, {
     desc: 'A cross-border network of research institutions, industry partners, investors and startups building Europe\'s DeepTech future together.',
     cta: 'Explore ecosystem',
     items: [
+      { title: 'Our Ecosystem',           desc: 'The full picture of our cross-border network.',   href: '/ecosystem' },
       { title: 'Industry Partners',       desc: 'Corporate members and ecosystem partners.' },
       { title: 'Research & Universities', desc: 'World-class institutions in the network.' },
       { title: 'Network Partners',        desc: 'Cross-border collaborators and allies.' },
