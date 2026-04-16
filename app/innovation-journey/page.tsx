@@ -5,6 +5,8 @@ import Footer from '../components/Footer'
 import CallToAction from '../components/CallToAction'
 import { r, TEAL, DARK, W10 } from '../lib/tokens'
 import SectionIntro from '../components/SectionIntro'
+import TrilogySection from './TrilogySection'
+import PillarsSection from './PillarsSection'
 
 /* ─── Hero ───────────────────────────────────────── */
 function Hero() {
@@ -118,6 +120,8 @@ export default function InnovationJourneyPage() {
           <p>southwestX connects established companies with Europe's most promising DeepTech startups and research institutions. Our structured programs are designed to turn technological potential into measurable business results.</p>
           <p>Whether you are looking to discover new technologies, co-develop solutions or build long-term partnerships, the Innovation Journey provides a framework that fits your strategic ambitions.</p>
         </SectionIntro>
+        <TrilogySection />
+        <PillarsSection />
         <CallToAction />
       </main>
       <Footer />
