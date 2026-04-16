@@ -1,0 +1,137 @@
+.section {
+  background: #f6f3ef;
+  padding: 120px 64px;
+}
+
+.inner {
+  max-width: var(--content-max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 96px;
+  align-items: start;
+}
+
+/* ── Left: heading ── */
+.left {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.eyebrow {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #3ccbda;
+  margin: 0;
+}
+
+.headline {
+  font-size: clamp(2rem, 3.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #0a0a0a;
+  margin: 0;
+}
+
+/* ── Right: accordion ── */
+.accordion {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.item:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Question row */
+.question {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.questionText {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #0a0a0a;
+  transition: color 0.2s ease;
+  flex: 1;
+}
+
+.item:hover .questionText,
+.itemOpen .questionText {
+  color: #3ccbda;
+}
+
+/* Icon */
+.icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0a0a0a;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  margin-top: 2px;
+}
+
+.itemOpen .icon {
+  background: #0a0a0a;
+  border-color: #0a0a0a;
+  color: #ffffff;
+}
+
+/* Horizontal line disappears when open (turns + into –) */
+.hLine {
+  transition: opacity 0.2s ease;
+}
+.itemOpen .hLine {
+  opacity: 0;
+}
+
+/* Answer */
+.answerWrap {
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.answer {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #404040;
+  margin: 0;
+  padding-bottom: 28px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .section { padding: 80px 32px; }
+  .inner   { grid-template-columns: 1fr; gap: 48px; }
+  .left    { position: static; }
+}
+
+@media (max-width: 480px) {
+  .section { padding: 64px 20px; }
+  .questionText { font-size: 18px; }
+}

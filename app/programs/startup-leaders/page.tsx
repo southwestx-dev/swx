@@ -5,6 +5,7 @@ import Footer from '../../components/Footer'
 import CallToAction from '../../components/CallToAction'
 import { r, TEAL, DARK, W10 } from '../../lib/tokens'
 import SectionIntro from '../../components/SectionIntro'
+import FAQSection from '../../components/FAQSection'
 
 /* ─── Hero ───────────────────────────────────────── */
 function Hero() {
@@ -122,6 +123,36 @@ export default function StartupLeadersPage() {
           <p>Startup Leaders connects established companies with Europe's most advanced DeepTech startups operating at Series A and beyond. This is not a scouting exercise — it is a structured engagement designed to generate real strategic outcomes.</p>
           <p>Participants gain access to a curated cohort of scale-ups, structured collaboration formats and a bilateral exchange that accelerates both corporate innovation and startup growth across the Franco-German corridor.</p>
         </SectionIntro>
+        <FAQSection
+          eyebrow="FAQ"
+          headline={'Frequently asked\nquestions'}
+          items={[
+            {
+              q: 'Who can participate in Startup Leaders?',
+              a: 'Startup Leaders is designed for established companies — primarily mid-size to large corporates — that are looking to engage strategically with high-growth DeepTech startups at Series A stage and beyond. Both French and German companies are welcome, as are international companies with a presence in the Franco-German corridor.',
+            },
+            {
+              q: 'Which startups will we work with?',
+              a: 'Participants are matched with a curated cohort of 10 to 15 Series A+ DeepTech startups selected by the southwestX team. Matching is based on strategic fit, technology domain and collaboration potential to ensure meaningful bilateral engagement.',
+            },
+            {
+              q: 'How long does the program run?',
+              a: 'The program runs over a structured 12-week period with defined milestones, working sessions and bilateral events across Germany and France. A program calendar with all key dates is shared upon onboarding.',
+            },
+            {
+              q: 'What is the application process?',
+              a: 'Companies apply via a short form detailing their innovation focus areas and strategic objectives. Selected participants are notified within two weeks and onboarded by the southwestX team before the program kicks off.',
+            },
+            {
+              q: 'What is the time commitment?',
+              a: 'Participants should plan for approximately four to six hours per week including program sessions, bilateral meetings and milestone reviews. On-site events require travel to either Stuttgart or the partner location in France.',
+            },
+            {
+              q: 'Is there a participation fee?',
+              a: 'We offer tailored partnership models depending on your level of engagement. Please reach out directly to our team for detailed pricing and to discuss which format best fits your organization.',
+            },
+          ]}
+        />
         <CallToAction />
       </main>
       <Footer />
