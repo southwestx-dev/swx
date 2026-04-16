@@ -7,6 +7,7 @@ import { r, TEAL, DARK, W10 } from '../lib/tokens'
 import SectionIntro from '../components/SectionIntro'
 import TrilogySection from './TrilogySection'
 import PillarsSection from './PillarsSection'
+import CompanyTouchpoints from './CompanyTouchpoints'
 
 /* ─── Hero ───────────────────────────────────────── */
 function Hero() {
@@ -122,6 +123,7 @@ export default function InnovationJourneyPage() {
         </SectionIntro>
         <TrilogySection />
         <PillarsSection />
+        <CompanyTouchpoints />
         <CallToAction />
       </main>
       <Footer />
