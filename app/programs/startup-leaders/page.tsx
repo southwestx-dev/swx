@@ -6,6 +6,7 @@ import CallToAction from '../../components/CallToAction'
 import { r, TEAL, DARK, W10 } from '../../lib/tokens'
 import SectionIntro from '../../components/SectionIntro'
 import FAQSection from '../../components/FAQSection'
+import StickyScroll from './StickyScroll'
 
 /* ─── Hero ───────────────────────────────────────── */
 function Hero() {
@@ -123,6 +124,7 @@ export default function StartupLeadersPage() {
           <p>Startup Leaders connects established companies with Europe's most advanced DeepTech startups operating at Series A and beyond. This is not a scouting exercise — it is a structured engagement designed to generate real strategic outcomes.</p>
           <p>Participants gain access to a curated cohort of scale-ups, structured collaboration formats and a bilateral exchange that accelerates both corporate innovation and startup growth across the Franco-German corridor.</p>
         </SectionIntro>
+        <StickyScroll />
         <FAQSection
           eyebrow="FAQ"
           headline={'Frequently asked\nquestions'}

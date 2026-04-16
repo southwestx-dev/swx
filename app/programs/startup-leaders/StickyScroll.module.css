@@ -1,0 +1,108 @@
+.section {
+  background: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+  padding: 192px 64px;
+}
+
+/* ── Teal gradient (left decorative) ── */
+.gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 52%;
+  background: linear-gradient(239deg, rgba(255,255,255,0.85) 0%, #3ccbda 39%, #0a0a0a 78%);
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+/* ── Layout ── */
+.inner {
+  max-width: var(--content-max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 120px;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Left: sticky panel ── */
+.left {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.eyebrow {
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #171717;
+  margin: 0;
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.question {
+  font-size: clamp(1.75rem, 3.5vw, 56px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: #171717;
+  margin: 0;
+  transition: opacity 0.4s ease;
+}
+
+.questionActive {
+  opacity: 1;
+}
+
+.questionInactive {
+  opacity: 0.15;
+}
+
+/* ── Right: scrolling cards ── */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  background: #171717;
+  border-radius: 16px;
+  padding: 48px;
+  min-height: 140px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.cardTitle {
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #d4d4d4;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .section  { padding: 120px 32px; }
+  .inner    { grid-template-columns: 1fr; gap: 64px; }
+  .left     { position: static; }
+  .gradient { width: 100%; opacity: 0.1; }
+}
+
+@media (max-width: 480px) {
+  .section    { padding: 80px 20px; }
+  .card       { padding: 32px; }
+  .cardTitle  { font-size: 26px; }
+}
