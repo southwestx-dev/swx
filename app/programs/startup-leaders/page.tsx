@@ -8,6 +8,8 @@ import SectionIntro from '../../components/SectionIntro'
 import FAQSection from '../../components/FAQSection'
 import StickyScroll from './StickyScroll'
 import PhotoGrid from './PhotoGrid'
+import OfferSection from './OfferSection'
+import ScheduleSection from './ScheduleSection'
 
 /* ─── Hero ───────────────────────────────────────── */
 function Hero() {
@@ -62,7 +64,7 @@ function Hero() {
             color: TEAL, fontSize: r(14), fontWeight: 400,
             display: 'inline-flex', alignItems: 'center', whiteSpace: 'nowrap',
           }}>
-            For Companies
+            For Founders
           </span>
         </div>
 
@@ -71,7 +73,7 @@ function Hero() {
           fontWeight: 700, lineHeight: 1.0, letterSpacing: '-0.02em',
           color: 'white', margin: 0,
         }}>
-          <span style={{ color: TEAL }}>Startup</span> Leaders
+          Connecting Europe's Next Gen <span style={{ color: TEAL }}>Tech Champions.</span>
         </h1>
 
         <p style={{
@@ -79,9 +81,7 @@ function Hero() {
           color: 'rgba(255,255,255,0.85)',
           maxWidth: r(720), margin: 0,
         }}>
-          A structured program connecting established companies with Europe's most
-          promising Series A+ startups — enabling strategic partnerships, co-development
-          and investment opportunities across the Franco-German ecosystem.
+          We are an invite-only circle uniting France's and Germany's most ambitious tech startup founders on a mission to strengthen European digital sovereignty.
         </p>
 
         <div style={{ display: 'flex', gap: r(16), flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -91,7 +91,7 @@ function Hero() {
             background: TEAL, border: `1px solid ${W10}`,
             color: DARK, fontSize: r(14), fontWeight: 700, textDecoration: 'none',
           }}>
-            Apply Now
+            Get in touch
           </a>
           <a href="/programs" className="btn-hover" style={{
             display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
@@ -108,6 +108,40 @@ function Hero() {
   )
 }
 
+/* ─── Stats Bar ──────────────────────────────────── */
+const STATS = [
+  { value: '20+', label: 'Founders per cohort' },
+  { value: '4',   label: 'Off-site retreats' },
+  { value: '12',  label: 'Months programme' },
+  { value: '2–3', label: 'Days per retreat' },
+]
+
+function StatsBar() {
+  return (
+    <div style={{
+      background: '#171717',
+      borderTop: '1px solid rgba(255,255,255,0.06)',
+      borderBottom: '1px solid rgba(255,255,255,0.06)',
+    }}>
+      <div style={{
+        maxWidth: 'var(--content-max-w)', margin: '0 auto',
+        display: 'grid', gridTemplateColumns: `repeat(${STATS.length}, 1fr)`,
+      }}>
+        {STATS.map((s, i) => (
+          <div key={i} style={{
+            padding: `${r(40)} ${r(32)}`,
+            borderRight: i < STATS.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none',
+            display: 'flex', flexDirection: 'column', gap: r(8), alignItems: 'center', textAlign: 'center',
+          }}>
+            <span style={{ fontSize: r(56), fontWeight: 400, lineHeight: 1, color: 'white' }}>{s.value}</span>
+            <span style={{ fontSize: r(16), fontWeight: 400, lineHeight: 1.4, color: 'rgba(255,255,255,0.5)' }}>{s.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 /* ─── Page ───────────────────────────────────────── */
 export default function StartupLeadersPage() {
   return (
@@ -115,45 +149,56 @@ export default function StartupLeadersPage() {
       <Nav />
       <main>
         <Hero />
+        <StatsBar />
         <SectionIntro
-          eyebrow="About the Program"
-          headline={'Scale together.\nLead the market.'}
+          eyebrow="What we are"
+          headline={'A Franco-German\nProgram'}
           headlineSize={56}
           paddingTop={120}
           paddingBottom={80}
         >
-          <p>Startup Leaders connects established companies with Europe's most advanced DeepTech startups operating at Series A and beyond. This is not a scouting exercise — it is a structured engagement designed to generate real strategic outcomes.</p>
-          <p>Participants gain access to a curated cohort of scale-ups, structured collaboration formats and a bilateral exchange that accelerates both corporate innovation and startup growth across the Franco-German corridor.</p>
+          <p>The STARTUP LEADERS Program fosters the Franco-German bridge to support selected (deep)tech startup founders on their path to industrial maturity and cross-border potential. In 4 highly curated off-site retreats, we match our members with top executive mentors, industrial leaders and authorities from politics and growth finance.</p>
+          <p style={{ fontWeight: 700, color: '#0a0a0a' }}>STARTUP LEADERS is a life-long network on a mission to strengthen European tech sovereignty.</p>
         </SectionIntro>
         <PhotoGrid />
+        <OfferSection />
         <StickyScroll />
+        <ScheduleSection />
         <FAQSection
           eyebrow="FAQ"
-          headline={'Frequently asked\nquestions'}
+          headline={'Further info'}
           items={[
             {
-              q: 'Who can participate in Startup Leaders?',
-              a: 'Startup Leaders is designed for established companies — primarily mid-size to large corporates — that are looking to engage strategically with high-growth DeepTech startups at Series A stage and beyond. Both French and German companies are welcome, as are international companies with a presence in the Franco-German corridor.',
+              q: 'Who is eligible for the STARTUP LEADERS Program?',
+              a: 'We target late-stage Seed and Series A (deep-)tech founders from France and Germany who raised between 10–50 Mio. € and are ready to expand cross-border and to grow at industrial scale. The program is invite-only and targets exceptional founders and CEOs with category-defining ambition, united by technological excellence and a commitment to shaping Europe\'s future. Our first cohort will feature scaleup founders from quantum computing, ClimateTech and semiconductor industry.',
             },
             {
-              q: 'Which startups will we work with?',
-              a: 'Participants are matched with a curated cohort of 10 to 15 Series A+ DeepTech startups selected by the southwestX team. Matching is based on strategic fit, technology domain and collaboration potential to ensure meaningful bilateral engagement.',
+              q: 'How does the nomination and selection process work?',
+              a: 'Founders are nominated by trusted partners including VCs, corporates, startup factories, and the SWX network. After the nomination phase, a jury evaluates candidates and forms the final cohort of French and German startup founders.',
             },
             {
-              q: 'How long does the program run?',
-              a: 'The program runs over a structured 12-week period with defined milestones, working sessions and bilateral events across Germany and France. A program calendar with all key dates is shared upon onboarding.',
+              q: 'What does the "Zero Admin" policy actually mean?',
+              a: 'Our team manages all logistics during the retreats, including hotels, catering, etc., ensuring your focus remains entirely on strategic exchange and high-level networking. You just have to take care of your own travel costs.',
             },
             {
-              q: 'What is the application process?',
-              a: 'Companies apply via a short form detailing their innovation focus areas and strategic objectives. Selected participants are notified within two weeks and onboarded by the southwestX team before the program kicks off.',
+              q: 'What does the 12-month programme look like?',
+              a: 'The programme is built around four curated retreats — Paris at VivaTech (June 2026), Saarbrücken & Baden-Baden, Munich or Berlin, and Southern France. Each retreat lasts 2 days and combines executive mentorship, industry networking, leadership workshops, and access to policymakers and capital partners.',
             },
             {
-              q: 'What is the time commitment?',
-              a: 'Participants should plan for approximately four to six hours per week including program sessions, bilateral meetings and milestone reviews. On-site events require travel to either Stuttgart or the partner location in France.',
+              q: 'What do I gain from the retreat format?',
+              a: 'Each retreat provides off-the-record peer dialogue, direct access to senior executives and policymakers, client acquisition workshops, and introductions to growth-focused investors. We believe that off-site exchange with peers is essential to build a network of trust, confidentiality and friendship that lasts a lifetime.',
             },
             {
-              q: 'Is there a participation fee?',
-              a: 'We offer tailored partnership models depending on your level of engagement. Please reach out directly to our team for detailed pricing and to discuss which format best fits your organization.',
+              q: 'Can I participate if my startup is French or German only?',
+              a: 'Yes. The programme is specifically designed for French and German startups. Supporting German founders to expand into France and vice versa is one of the programme\'s core purposes.',
+            },
+            {
+              q: 'What is the commitment required?',
+              a: 'The programme consists of 4 structured retreats (2 days / nights each) over 12 months.',
+            },
+            {
+              q: 'How can I become a mentor?',
+              a: 'Distinguished by exceptional professional trajectories (DAX C-level & chairs, unicorn founders), our mentors represent a wide array of industrial backgrounds. They share our mission to contribute to European autonomy and to cultivate exchange between cross-sectoral leaders and the next generation of pioneers. If you want to become a mentor, reach out to project lead Jana Burnikel.',
             },
           ]}
         />

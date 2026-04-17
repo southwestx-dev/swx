@@ -4,21 +4,22 @@ import { useRef, useEffect, useState } from 'react'
 import styles from './StickyScroll.module.css'
 
 const QUESTIONS = [
-  'What happens during the program?',
-  'How are startups selected?',
-  'Application & timeline',
+  'The programme structure',
+  'How to get selected',
+  'Locations & logistics',
 ]
 
 const CARDS = [
-  '30 curated startup meetings',
-  'Thematic AI & DeepTech tracks',
-  'Corporate challenge sessions',
-  'Investor roundtables',
-  'Structured matchmaking',
+  '4 off-site retreats, 2–3 days each',
+  'Participation is mandatory',
+  'Nominated by VCs, corporates & the SWX network',
+  'Screened by a jury of top-level mentors',
+  'Paris, Saarbrücken, Baden-Baden, Southern France, Munich or Berlin',
+  'Zero Admin Policy — we handle all logistics at the retreats',
 ]
 
 /* Map card index → question index */
-const CARD_TO_Q = [0, 0, 1, 1, 2]
+const CARD_TO_Q = [0, 0, 1, 1, 2, 2]
 
 export default function StickyScroll() {
   const [activeQ, setActiveQ] = useState(0)
@@ -47,7 +48,7 @@ export default function StickyScroll() {
       <div className={styles.inner}>
         {/* Left: sticky questions */}
         <div className={styles.left}>
-          <p className={styles.eyebrow}>Briefing</p>
+          <p className={styles.eyebrow}>How it works</p>
           <div className={styles.questions}>
             {QUESTIONS.map((q, i) => (
               <p
