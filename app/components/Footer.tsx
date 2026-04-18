@@ -2,9 +2,17 @@ import { r } from '../lib/tokens'
 
 const FOOTER_NAV = {
   'For Startups':  ['Startup Journey', 'Programs & Batches', 'Active Calls', 'Resources & Tools'],
-  'For Companies': ['Innovation Journey', 'Collaboration Formats', 'Strategic Partnerships', 'Corporate Membership'],
+  'For Companies': ['Innovation Journey', 'Collaboration Formats', 'Case Studies', 'Strategic Partnerships', 'Corporate Membership'],
   'Ecosystem':     ['Industry Partners', 'Research Institutes', 'de:hub Network', 'International'],
   'Company':       ['About Us', 'Team', 'Careers', 'Contact', 'Press'],
+}
+
+const FOOTER_HREFS: Record<string, string> = {
+  'Startup Journey':    '/startup-journey',
+  'Programs & Batches': '/programs',
+  'Innovation Journey': '/innovation-journey',
+  'Case Studies':       '/case-studies',
+  'About Us':           '/about',
 }
 
 export default function Footer() {
@@ -58,7 +66,7 @@ export default function Footer() {
               }}>{section}</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                 {links.map(link => (
-                  <a key={link} href="#" style={{ fontSize: '0.875rem', color: 'var(--text-3)', transition: 'color var(--ease)' }}
+                  <a key={link} href={FOOTER_HREFS[link] ?? '#'} style={{ fontSize: '0.875rem', color: 'var(--text-3)', transition: 'color var(--ease)' }}
                     onMouseEnter={e => (e.currentTarget.style.color = 'var(--text-1)')}
                     onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-3)')}
                   >
