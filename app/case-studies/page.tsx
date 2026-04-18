@@ -34,8 +34,8 @@ const CASES = [
   {
     sector: 'Quantum Computing',
     company: 'QuantumSec',
-    headline: 'Europe's first joint quantum security venture',
-    body: 'SouthwestX facilitated the founding partnership between a Saarland research spin-off and a Paris-based deep tech investor, creating Europe's first quantum-native security company.',
+    headline: "Europe's first joint quantum security venture",
+    body: "SouthwestX facilitated the founding partnership between a Saarland research spin-off and a Paris-based deep tech investor, creating Europe's first quantum-native security company.",
     tags: ['Deep Tech', 'Quantum', 'Pre-Seed'],
     img: '/img-networking.jpg',
   },
