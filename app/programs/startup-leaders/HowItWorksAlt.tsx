@@ -36,10 +36,27 @@ const STEPS = [
   },
 ]
 
+const STICKY_TOP = 120 // matches .right { top: 120px }
+
 export default function HowItWorksAlt() {
   const [activeIndex, setActiveIndex] = useState(0)
+  const [isSticky, setIsSticky] = useState(false)
   const itemRefs = useRef<(HTMLDivElement | null)[]>([])
+  const gridRef = useRef<HTMLDivElement | null>(null)
 
+  // Activate dimming only once the right panel has reached its sticky position
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!gridRef.current) return
+      const rect = gridRef.current.getBoundingClientRect()
+      setIsSticky(rect.top <= STICKY_TOP && rect.bottom > STICKY_TOP)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Track which left item is centred in the viewport
   useEffect(() => {
     const observers = itemRefs.current.map((el, i) => {
       if (!el) return null
@@ -68,7 +85,7 @@ export default function HowItWorksAlt() {
         </div>
 
         {/* Two-column interactive grid — starts at Nomination */}
-        <div className={styles.grid}>
+        <div className={styles.grid} ref={gridRef}>
 
           {/* Left: 6 scrolling headlines */}
           <div className={styles.left}>
@@ -76,7 +93,11 @@ export default function HowItWorksAlt() {
               <div
                 key={step.n}
                 ref={el => { itemRefs.current[i] = el }}
-                className={`${styles.item} ${i === activeIndex ? styles.itemActive : styles.itemInactive}`}
+                className={`${styles.item} ${
+                  !isSticky
+                    ? styles.itemActive
+                    : i === activeIndex ? styles.itemActive : styles.itemInactive
+                }`}
               >
                 <span className={styles.number}>{step.n}</span>
                 <h3 className={styles.itemTitle}>{step.title}</h3>
