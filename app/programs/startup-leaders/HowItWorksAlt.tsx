@@ -41,29 +41,33 @@ const STICKY_TOP = 120 // matches .right { top: 120px }
 export default function HowItWorksAlt() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [isSticky, setIsSticky] = useState(false)
+  const [panelVisible, setPanelVisible] = useState(false)
   const gridRef = useRef<HTMLDivElement | null>(null)
+  const headerRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     const handleScroll = () => {
       const el = gridRef.current
-      if (!el) return
+      const headerEl = headerRef.current
+      if (!el || !headerEl) return
 
       const rect = el.getBoundingClientRect()
+      const headerRect = headerEl.getBoundingClientRect()
       const vh = window.innerHeight
 
-      // Panel is stuck while grid top is above STICKY_TOP and grid bottom is still below it
+      // Panel fades in once the headline reaches 75 % from the top of the viewport
+      setPanelVisible(headerRect.top <= vh * 0.75)
+
+      // Active-index dimming only while the right panel is stuck
       const stuck = rect.top <= STICKY_TOP && rect.bottom > STICKY_TOP
       setIsSticky(stuck)
 
       if (stuck) {
-        // How far we've scrolled past the stick point
         const scrolled = STICKY_TOP - rect.top
-        // Total scrollable distance before the section ends
         const totalScrollable = rect.height - (vh - STICKY_TOP)
         const progress = totalScrollable > 0
           ? Math.max(0, Math.min(1, scrolled / totalScrollable))
           : 0
-        // Map progress → active index
         const index = Math.min(STEPS.length - 1, Math.floor(progress * STEPS.length))
         setActiveIndex(index)
       }
@@ -79,24 +83,22 @@ export default function HowItWorksAlt() {
       <div aria-hidden="true" className={styles.gradient} />
 
       <div className={styles.inner}>
-
-        {/* Two-column interactive grid */}
         <div className={styles.grid} ref={gridRef}>
 
-          {/* Left: header + 6 scrolling headlines */}
+          {/* Left: headline + 6 scrolling items — all dim until reached */}
           <div className={styles.left}>
-            {/* Headline lives only in the left column */}
-            <div className={styles.header}>
+            <div className={styles.header} ref={headerRef}>
               <p className={styles.eyebrow}>How it works</p>
               <h2 className={styles.headline}>The STARTUP LEADERS Programme</h2>
             </div>
+
             {STEPS.map((step, i) => (
               <div
                 key={step.n}
                 className={`${styles.item} ${
-                  !isSticky
+                  isSticky && i === activeIndex
                     ? styles.itemActive
-                    : i === activeIndex ? styles.itemActive : styles.itemInactive
+                    : styles.itemInactive
                 }`}
               >
                 <span className={styles.number}>{step.n}</span>
@@ -105,8 +107,8 @@ export default function HowItWorksAlt() {
             ))}
           </div>
 
-          {/* Right: sticky body text panel */}
-          <div className={styles.right}>
+          {/* Right: sticky panel — hidden until headline at 75 % viewport */}
+          <div className={`${styles.right} ${panelVisible ? styles.rightVisible : ''}`}>
             <div className={styles.panel}>
               <span className={styles.panelNumber}>{STEPS[activeIndex].n}</span>
               <h3 className={styles.panelTitle}>{STEPS[activeIndex].title}</h3>

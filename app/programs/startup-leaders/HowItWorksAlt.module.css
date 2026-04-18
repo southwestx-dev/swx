@@ -99,10 +99,20 @@
   margin: 0;
 }
 
-/* ── Right: sticky panel ── */
+/* ── Right: sticky panel — hidden until headline at 75 % viewport ── */
 .right {
   position: sticky;
   top: 120px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  pointer-events: none;
+}
+
+.rightVisible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .panel {
