@@ -1,5 +1,5 @@
 .section {
-  background: #f6f3ef;
+  background: #0a0a0a;
   padding: 120px 64px;
 }
 
@@ -34,7 +34,7 @@
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: #0a0a0a;
+  color: white;
   margin: 0;
 }
 
@@ -45,11 +45,11 @@
 }
 
 .item {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .item:first-child {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* Question row */
@@ -70,7 +70,7 @@
   font-size: 20px;
   font-weight: 400;
   line-height: 1.4;
-  color: #0a0a0a;
+  color: white;
   transition: color 0.2s ease;
   flex: 1;
 }
@@ -86,19 +86,19 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #0a0a0a;
+  color: white;
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   margin-top: 2px;
 }
 
 .itemOpen .icon {
-  background: #0a0a0a;
-  border-color: #0a0a0a;
-  color: #ffffff;
+  background: white;
+  border-color: white;
+  color: #0a0a0a;
 }
 
 /* Horizontal line disappears when open (turns + into –) */
@@ -119,7 +119,7 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 1.7;
-  color: #404040;
+  color: rgba(255, 255, 255, 0.55);
   margin: 0;
   padding-bottom: 28px;
 }
