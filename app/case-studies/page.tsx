@@ -157,6 +157,28 @@ function CaseCard({ c, i }: { c: typeof CASES[0]; i: number }) {
             }}>{t}</span>
           ))}
         </div>
+
+        {/* CTA */}
+        <a
+          href="#contact"
+          data-contact-modal
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: '8px',
+            marginTop: '8px',
+            fontSize: '14px', fontWeight: 700, color: '#0a0a0a',
+            textDecoration: 'none',
+            borderTop: '1px solid rgba(0,0,0,0.1)',
+            paddingTop: '20px',
+            transition: 'color 0.2s ease',
+          }}
+          onMouseEnter={e => (e.currentTarget.style.color = TEAL)}
+          onMouseLeave={e => (e.currentTarget.style.color = '#0a0a0a')}
+        >
+          Read case study
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
       </div>
     </article>
   )
