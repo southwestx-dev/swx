@@ -53,8 +53,9 @@ export default function BenefitsSlider() {
 
       {/* Header */}
       <div className={styles.intro}>
-        <p className={styles.eyebrow}>What you gain</p>
-        <h2 className={styles.headline}>Built for founders who move fast</h2>
+        <p className={styles.eyebrow}>What you can expect</p>
+        <h2 className={styles.headline}>Programme Schedule</h2>
+        <p className={styles.note}>This programme is preliminary and subject to change.</p>
       </div>
 
       {/* Cards */}

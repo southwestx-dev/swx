@@ -32,6 +32,13 @@
   margin: 0;
 }
 
+.note {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0;
+}
+
 /* ── Scroll track ── */
 .track {
   display: flex;
