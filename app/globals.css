@@ -55,7 +55,7 @@ html { font-size: 16px; }
 @media (max-width: 768px)  { html { font-size: 12.48px; } } /* ×0.78 */
 @media (max-width: 425px)  { html { font-size: 11.2px;  } } /* ×0.70 */
 
-html { scroll-behavior: smooth; overflow-x: hidden; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 
 body {
   font-family: var(--font);
@@ -65,7 +65,7 @@ body {
   color: var(--text-2);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 ::selection { background: rgba(0, 255, 194, 0.25); }
