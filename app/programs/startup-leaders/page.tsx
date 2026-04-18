@@ -180,7 +180,7 @@ export default function StartupLeadersPage() {
             },
           ]}
         />
-        <CallToAction />
+        <CallToAction image={{ src: '/img-contact-person.jpg', alt: 'Contact person' }} />
       </main>
       <Footer />
     </>
