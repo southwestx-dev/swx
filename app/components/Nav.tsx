@@ -24,7 +24,7 @@ const MEGA_DATA: Record<string, {
     items: [
       { title: 'Innovation Journey',    desc: 'Structured corporate innovation programs.',  href: '/innovation-journey' },
       { title: 'Collaboration Formats', desc: 'Co-creation with startups and research.' },
-      { title: 'Case Studies',          desc: 'Real results from our ecosystem partnerships.' },
+      { title: 'Case Studies',          desc: 'Real results from our ecosystem partnerships.',  href: '/case-studies' },
       { title: 'Partnership',           desc: 'Become a long-term ecosystem partner.' },
     ],
   },
