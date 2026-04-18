@@ -533,54 +533,66 @@ function CoreStrengths() {
 /* ─── Text + Image ("Our Approach") ─────────────── */
 function TextImage() {
   return (
-    <section id="about" style={{ background: '#f6f3ef', display: 'flex' }}>
-      {/* Left: text */}
-      <div style={{ flex: '1 0 0', padding: `${r(192)} ${r(64)}`, display: 'flex', flexDirection: 'column', gap: r(96) }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
-          <p style={{ fontSize: r(23), lineHeight: 1.6, color: TEAL }}>The SouthwestX Ecosystem</p>
-          <h2 style={{ fontSize: 'clamp(2.5rem, 4.5vw, 4.3125rem)', fontWeight: 400, lineHeight: 1.1, color: DARK2 }}>
-            A strong network across Germany and Europe
-          </h2>
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 48 }}>
-          <div style={{ fontSize: r(18), lineHeight: 1.6, color: '#404040' }}>
-            <p style={{ marginBottom: 16 }}>SouthwestX is embedded in a strong national and international innovation ecosystem. Through strategic networks, research-driven partnerships and cross-border collaboration, we connect startups and companies with the institutions, expertise and market access that matter for long-term growth.</p>
-            <p>From Germany's startup landscape to partnerships across France, Luxembourg and the wider European context, SouthwestX creates the connections that expand opportunity, strengthen visibility and open pathways for venture building and innovation.</p>
+    <section id="about" style={{ background: '#f6f3ef', padding: '120px 64px' }}>
+      <div style={{
+        maxWidth: 'var(--content-max-w)',
+        margin: '0 auto',
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        gap: '80px',
+        alignItems: 'center',
+      }}>
+        {/* Left: text */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            <p style={{ fontSize: '18px', fontWeight: 400, lineHeight: 1.6, color: TEAL, margin: 0 }}>
+              The SouthwestX Ecosystem
+            </p>
+            <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 56px)', fontWeight: 400, lineHeight: 1.05, letterSpacing: '-0.02em', color: '#171717', margin: 0 }}>
+              A strong network across Germany and Europe
+            </h2>
           </div>
-          <div style={{ display: 'flex', gap: 16 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            <p style={{ fontSize: '18px', lineHeight: 1.6, color: '#404040', margin: 0 }}>SouthwestX is embedded in a strong national and international innovation ecosystem. Through strategic networks, research-driven partnerships and cross-border collaboration, we connect startups and companies with the institutions, expertise and market access that matter for long-term growth.</p>
+            <p style={{ fontSize: '18px', lineHeight: 1.6, color: '#404040', margin: 0 }}>From Germany's startup landscape to partnerships across France, Luxembourg and the wider European context, SouthwestX creates the connections that expand opportunity, strengthen visibility and open pathways for venture building and innovation.</p>
+          </div>
+          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
             <a href="#programs" className="btn-hover-light" style={lightGhostBtnStyle}>Explore the ecosystem</a>
             <a href="#cta" data-contact-modal className="btn-hover-light" style={lightGhostBtnStyle}>Get in touch</a>
           </div>
         </div>
-      </div>
 
-      {/* Right: image */}
-      <div style={{ flex: '1 0 0', position: 'relative', overflow: 'hidden', minHeight: 600 }}>
-        <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
-          <img src="/img-networking.jpg" alt="southwestX workspace" style={{
-            position: 'absolute', height: '100%', left: '-64.25%', width: '172.81%',
-            objectFit: 'cover', maxWidth: 'none',
-          }} />
+        {/* Right: image card */}
+        <div id="about-card" style={{
+          borderRadius: '16px',
+          height: '480px',
+          position: 'relative',
+          overflow: 'hidden',
+        }}>
+          <img
+            src="/img-networking.jpg"
+            alt="SouthwestX networking"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }}
+          />
         </div>
-        <div style={{
-          position: 'absolute', inset: 0,
-          background: `linear-gradient(232deg, ${TEAL} 0%, rgba(148,183,255,0) 39.26%)`,
-        }} />
       </div>
 
       <style>{`
-        @media (max-width: 1200px) {
-          #about { flex-direction: column; }
-          #about > div:first-child { padding: 80px 64px !important; gap: 64px !important; }
-          #about > div:last-child { min-height: 400px !important; }
+        #about-card::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          border-radius: 16px;
+          background: linear-gradient(225deg, rgba(60, 203, 218, 0.12) 0%, transparent 50%);
+          pointer-events: none;
         }
-        @media (max-width: 900px) {
-          #about > div:first-child { padding: 80px 40px !important; gap: 48px !important; }
-          #about > div:last-child { min-height: 360px !important; }
+        @media (max-width: 1024px) {
+          #about { padding: 80px 32px !important; }
+          #about > div { grid-template-columns: 1fr !important; gap: 48px !important; }
+          #about-card { height: 320px !important; }
         }
-        @media (max-width: 640px) {
-          #about > div:first-child { padding: 60px 20px !important; gap: 40px !important; }
-          #about > div:last-child { min-height: 260px !important; }
+        @media (max-width: 480px) {
+          #about { padding: 64px 20px !important; }
         }
       `}</style>
     </section>
