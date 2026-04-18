@@ -47,6 +47,18 @@
   flex-direction: column;
   gap: 16px;
   min-height: 280px;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+  cursor: default;
+}
+
+.card:hover {
+  background: #e8e0d5;
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.10);
+}
+
+.card:hover .number {
+  opacity: 1;
 }
 
 .number {
@@ -55,6 +67,8 @@
   line-height: 1;
   color: #3ccbda;
   letter-spacing: 0.05em;
+  opacity: 0.6;
+  transition: opacity 0.22s ease;
 }
 
 .cardTitle {

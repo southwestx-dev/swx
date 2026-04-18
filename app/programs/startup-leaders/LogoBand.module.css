@@ -1,0 +1,59 @@
+.band {
+  background: #f6f3ef;
+  padding: 48px 0;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.trackWrap {
+  position: relative;
+  width: 100%;
+  height: 56px;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 96px;
+  width: max-content;
+  animation: marquee 36s linear infinite;
+}
+
+.logo {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  opacity: 0.55;
+  filter: grayscale(1);
+}
+
+.fade {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 200px;
+  pointer-events: none;
+}
+
+.fadeLeft {
+  left: 0;
+  background: linear-gradient(to right, #f6f3ef, rgba(246, 243, 239, 0));
+}
+
+.fadeRight {
+  right: 0;
+  background: linear-gradient(to left, #f6f3ef, rgba(246, 243, 239, 0));
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (max-width: 640px) {
+  .band { padding: 32px 0; }
+  .logo { height: 32px; }
+  .fade { width: 80px; }
+}

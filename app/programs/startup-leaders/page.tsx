@@ -5,11 +5,13 @@ import Footer from '../../components/Footer'
 import CallToAction from '../../components/CallToAction'
 import { r, TEAL, DARK, W10 } from '../../lib/tokens'
 import SectionIntro from '../../components/SectionIntro'
+import StatsCounter from '../../components/StatsCounter'
 import FAQSection from '../../components/FAQSection'
 import StickyScroll from './StickyScroll'
-import PhotoGrid from './PhotoGrid'
 import OfferSection from './OfferSection'
 import ScheduleSection from './ScheduleSection'
+import LogoBand from './LogoBand'
+import ImageHero from './ImageHero'
 
 /* ─── Hero ───────────────────────────────────────── */
 function Hero() {
@@ -108,40 +110,6 @@ function Hero() {
   )
 }
 
-/* ─── Stats Bar ──────────────────────────────────── */
-const STATS = [
-  { value: '20+', label: 'Founders per cohort' },
-  { value: '4',   label: 'Off-site retreats' },
-  { value: '12',  label: 'Months programme' },
-  { value: '2–3', label: 'Days per retreat' },
-]
-
-function StatsBar() {
-  return (
-    <div style={{
-      background: '#171717',
-      borderTop: '1px solid rgba(255,255,255,0.06)',
-      borderBottom: '1px solid rgba(255,255,255,0.06)',
-    }}>
-      <div style={{
-        maxWidth: 'var(--content-max-w)', margin: '0 auto',
-        display: 'grid', gridTemplateColumns: `repeat(${STATS.length}, 1fr)`,
-      }}>
-        {STATS.map((s, i) => (
-          <div key={i} style={{
-            padding: `${r(40)} ${r(32)}`,
-            borderRight: i < STATS.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none',
-            display: 'flex', flexDirection: 'column', gap: r(8), alignItems: 'center', textAlign: 'center',
-          }}>
-            <span style={{ fontSize: r(56), fontWeight: 400, lineHeight: 1, color: 'white' }}>{s.value}</span>
-            <span style={{ fontSize: r(16), fontWeight: 400, lineHeight: 1.4, color: 'rgba(255,255,255,0.5)' }}>{s.label}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
-
 /* ─── Page ───────────────────────────────────────── */
 export default function StartupLeadersPage() {
   return (
@@ -149,7 +117,7 @@ export default function StartupLeadersPage() {
       <Nav />
       <main>
         <Hero />
-        <StatsBar />
+        <LogoBand />
         <SectionIntro
           eyebrow="What we are"
           headline={'A Franco-German\nProgram'}
@@ -160,8 +128,14 @@ export default function StartupLeadersPage() {
           <p>The STARTUP LEADERS Program fosters the Franco-German bridge to support selected (deep)tech startup founders on their path to industrial maturity and cross-border potential. In 4 highly curated off-site retreats, we match our members with top executive mentors, industrial leaders and authorities from politics and growth finance.</p>
           <p style={{ fontWeight: 700, color: '#0a0a0a' }}>STARTUP LEADERS is a life-long network on a mission to strengthen European tech sovereignty.</p>
         </SectionIntro>
-        <PhotoGrid />
+        <StatsCounter stats={[
+          { value: '20+', label: 'Founders per cohort' },
+          { value: '4',   label: 'Off-site retreats' },
+          { value: '12',  label: 'Months programme' },
+          { value: '2',   label: 'Days minimum per retreat' },
+        ]} />
         <OfferSection />
+        <ImageHero />
         <StickyScroll />
         <ScheduleSection />
         <FAQSection
