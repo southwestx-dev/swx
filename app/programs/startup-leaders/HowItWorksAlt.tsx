@@ -41,35 +41,37 @@ const STICKY_TOP = 120 // matches .right { top: 120px }
 export default function HowItWorksAlt() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [isSticky, setIsSticky] = useState(false)
-  const itemRefs = useRef<(HTMLDivElement | null)[]>([])
   const gridRef = useRef<HTMLDivElement | null>(null)
 
-  // Activate dimming only once the right panel has reached its sticky position
   useEffect(() => {
     const handleScroll = () => {
-      if (!gridRef.current) return
-      const rect = gridRef.current.getBoundingClientRect()
-      setIsSticky(rect.top <= STICKY_TOP && rect.bottom > STICKY_TOP)
+      const el = gridRef.current
+      if (!el) return
+
+      const rect = el.getBoundingClientRect()
+      const vh = window.innerHeight
+
+      // Panel is stuck while grid top is above STICKY_TOP and grid bottom is still below it
+      const stuck = rect.top <= STICKY_TOP && rect.bottom > STICKY_TOP
+      setIsSticky(stuck)
+
+      if (stuck) {
+        // How far we've scrolled past the stick point
+        const scrolled = STICKY_TOP - rect.top
+        // Total scrollable distance before the section ends
+        const totalScrollable = rect.height - (vh - STICKY_TOP)
+        const progress = totalScrollable > 0
+          ? Math.max(0, Math.min(1, scrolled / totalScrollable))
+          : 0
+        // Map progress → active index
+        const index = Math.min(STEPS.length - 1, Math.floor(progress * STEPS.length))
+        setActiveIndex(index)
+      }
     }
+
     window.addEventListener('scroll', handleScroll, { passive: true })
     handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  // Track which left item is centred in the viewport
-  useEffect(() => {
-    const observers = itemRefs.current.map((el, i) => {
-      if (!el) return null
-      const obs = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setActiveIndex(i)
-        },
-        { threshold: 0.5, rootMargin: '-15% 0px -15% 0px' }
-      )
-      obs.observe(el)
-      return obs
-    })
-    return () => observers.forEach(o => o?.disconnect())
   }, [])
 
   return (
@@ -84,7 +86,7 @@ export default function HowItWorksAlt() {
           <h2 className={styles.headline}>The STARTUP LEADERS Programme</h2>
         </div>
 
-        {/* Two-column interactive grid — starts at Nomination */}
+        {/* Two-column interactive grid */}
         <div className={styles.grid} ref={gridRef}>
 
           {/* Left: 6 scrolling headlines */}
@@ -92,7 +94,6 @@ export default function HowItWorksAlt() {
             {STEPS.map((step, i) => (
               <div
                 key={step.n}
-                ref={el => { itemRefs.current[i] = el }}
                 className={`${styles.item} ${
                   !isSticky
                     ? styles.itemActive
