@@ -2,7 +2,7 @@ interface Props {
   image?: { src: string; alt: string }
 }
 
-export default function CallToAction({ image }: Props = {}) {
+export default function CallToAction({ image }: Props) {
   return (
     <section style={{
       background: '#0a0a0a',
