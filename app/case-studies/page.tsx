@@ -73,14 +73,13 @@ function Hero() {
         opacity: 0.08, pointerEvents: 'none',
       }} />
       <div style={{
-        maxWidth: 'var(--content-max-w)',
+        maxWidth: '800px',
         margin: '0 auto',
         position: 'relative',
         zIndex: 1,
         display: 'flex',
         flexDirection: 'column',
         gap: r(32),
-        maxWidth: '800px',
       }}>
         <p style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: TEAL, margin: 0 }}>
           For Companies
