@@ -37,6 +37,9 @@
 .left {
   display: flex;
   flex-direction: column;
+  /* Extra space so the grid stays tall enough for the panel to remain sticky
+     until the last headline has scrolled past the nav bar */
+  padding-bottom: 500px;
 }
 
 /* ── Headline block inside left column ── */
