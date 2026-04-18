@@ -1,7 +1,6 @@
 .section {
   background: #0a0a0a;
   position: relative;
-  overflow: hidden;
   padding: 192px 64px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
@@ -15,6 +14,7 @@
   background: linear-gradient(239deg, #0a0a0a 0%, #3ccbda 61%, rgba(255,255,255,0.85) 100%);
   opacity: 0.10;
   pointer-events: none;
+  clip-path: inset(0);
 }
 
 .inner {
