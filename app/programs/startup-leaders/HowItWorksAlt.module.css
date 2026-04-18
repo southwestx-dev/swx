@@ -17,28 +17,22 @@
   clip-path: inset(0);
 }
 
+/* ── Wrapper ── */
 .inner {
   max-width: var(--content-max-w);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 120px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
   position: relative;
   z-index: 1;
 }
 
-/* ── Left: scrolling ── */
-.left {
+/* ── Full-width header above the grid ── */
+.header {
   display: flex;
   flex-direction: column;
-  gap: 80px;
-}
-
-.intro {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+  gap: 24px;
 }
 
 .eyebrow {
@@ -59,7 +53,16 @@
   letter-spacing: -0.02em;
 }
 
-.list {
+/* ── Two-column interactive grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 120px;
+  align-items: start;
+}
+
+/* ── Left: scrolling headlines ── */
+.left {
   display: flex;
   flex-direction: column;
 }
@@ -74,17 +77,17 @@
   cursor: default;
 }
 
+.item:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
 .item:last-child {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.itemActive {
-  opacity: 1;
-}
-
-.itemInactive {
-  opacity: 0.2;
-}
+.itemActive  { opacity: 1; }
+.itemInactive { opacity: 0.2; }
 
 .number {
   font-size: 13px;
@@ -145,13 +148,13 @@
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
-  .section { padding: 120px 32px; }
-  .inner { grid-template-columns: 1fr; gap: 64px; }
-  .right { position: static; }
+  .section  { padding: 120px 32px; }
+  .grid     { grid-template-columns: 1fr; gap: 48px; }
+  .right    { position: static; }
   .gradient { width: 100%; opacity: 0.07; }
 }
 
 @media (max-width: 480px) {
   .section { padding: 80px 20px; }
-  .panel { padding: 32px; }
+  .panel   { padding: 32px; }
 }

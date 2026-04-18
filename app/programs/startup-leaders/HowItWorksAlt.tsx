@@ -58,17 +58,20 @@ export default function HowItWorksAlt() {
   return (
     <section className={styles.section}>
       <div aria-hidden="true" className={styles.gradient} />
+
       <div className={styles.inner}>
 
-        {/* Left — scrolling headlines */}
-        <div className={styles.left}>
-          <div className={styles.intro}>
-            <p className={styles.eyebrow}>How it works</p>
-            <h2 className={styles.headline}>
-              The STARTUP LEADERS Programme
-            </h2>
-          </div>
-          <div className={styles.list}>
+        {/* Full-width header above the grid */}
+        <div className={styles.header}>
+          <p className={styles.eyebrow}>How it works</p>
+          <h2 className={styles.headline}>The STARTUP LEADERS Programme</h2>
+        </div>
+
+        {/* Two-column interactive grid — starts at Nomination */}
+        <div className={styles.grid}>
+
+          {/* Left: 6 scrolling headlines */}
+          <div className={styles.left}>
             {STEPS.map((step, i) => (
               <div
                 key={step.n}
@@ -80,17 +83,17 @@ export default function HowItWorksAlt() {
               </div>
             ))}
           </div>
-        </div>
 
-        {/* Right — sticky body text */}
-        <div className={styles.right}>
-          <div className={styles.panel}>
-            <span className={styles.panelNumber}>{STEPS[activeIndex].n}</span>
-            <h3 className={styles.panelTitle}>{STEPS[activeIndex].title}</h3>
-            <p className={styles.panelBody}>{STEPS[activeIndex].body}</p>
+          {/* Right: sticky body text panel */}
+          <div className={styles.right}>
+            <div className={styles.panel}>
+              <span className={styles.panelNumber}>{STEPS[activeIndex].n}</span>
+              <h3 className={styles.panelTitle}>{STEPS[activeIndex].title}</h3>
+              <p className={styles.panelBody}>{STEPS[activeIndex].body}</p>
+            </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </section>
   )
