@@ -55,8 +55,8 @@ export default function HowItWorksAlt() {
       const headerRect = headerEl.getBoundingClientRect()
       const vh = window.innerHeight
 
-      // Panel fades in once the headline reaches 75 % from the top of the viewport
-      setPanelVisible(headerRect.top <= vh * 0.75)
+      // Panel fades in once the headline reaches 25 % from the top of the viewport
+      setPanelVisible(headerRect.top <= vh * 0.25)
 
       // Active-index dimming only while the right panel is stuck
       const stuck = rect.top <= STICKY_TOP && rect.bottom > STICKY_TOP
