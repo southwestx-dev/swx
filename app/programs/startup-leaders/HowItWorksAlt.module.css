@@ -21,18 +21,30 @@
 .inner {
   max-width: var(--content-max-w);
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
   position: relative;
   z-index: 1;
 }
 
-/* ── Full-width header above the grid ── */
+/* ── Two-column interactive grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 120px;
+  align-items: start;
+}
+
+/* ── Left: headline + scrolling items ── */
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Headline block inside left column ── */
 .header {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  padding-bottom: 80px;
 }
 
 .eyebrow {
@@ -53,33 +65,15 @@
   letter-spacing: -0.02em;
 }
 
-/* ── Two-column interactive grid ── */
-.grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 120px;
-  align-items: start;
-}
-
-/* ── Left: scrolling headlines ── */
-.left {
-  display: flex;
-  flex-direction: column;
-}
-
+/* ── Scrolling step items ── */
 .item {
-  padding: 40px 0;
+  padding: 80px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
   gap: 12px;
   transition: opacity 0.35s ease;
   cursor: default;
-}
-
-.item:first-child {
-  padding-top: 0;
-  border-top: none;
 }
 
 .item:last-child {
@@ -157,4 +151,5 @@
 @media (max-width: 480px) {
   .section { padding: 80px 20px; }
   .panel   { padding: 32px; }
+  .item    { padding: 56px 0; }
 }

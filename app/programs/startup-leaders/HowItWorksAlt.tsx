@@ -80,17 +80,16 @@ export default function HowItWorksAlt() {
 
       <div className={styles.inner}>
 
-        {/* Full-width header above the grid */}
-        <div className={styles.header}>
-          <p className={styles.eyebrow}>How it works</p>
-          <h2 className={styles.headline}>The STARTUP LEADERS Programme</h2>
-        </div>
-
         {/* Two-column interactive grid */}
         <div className={styles.grid} ref={gridRef}>
 
-          {/* Left: 6 scrolling headlines */}
+          {/* Left: header + 6 scrolling headlines */}
           <div className={styles.left}>
+            {/* Headline lives only in the left column */}
+            <div className={styles.header}>
+              <p className={styles.eyebrow}>How it works</p>
+              <h2 className={styles.headline}>The STARTUP LEADERS Programme</h2>
+            </div>
             {STEPS.map((step, i) => (
               <div
                 key={step.n}
