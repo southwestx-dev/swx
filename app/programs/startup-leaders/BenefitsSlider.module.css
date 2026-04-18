@@ -1,0 +1,230 @@
+.section {
+  background: #0a0a0a;
+  padding: 0 0 120px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ── Header ── */
+.intro {
+  max-width: var(--content-max-w);
+  margin: 0 auto;
+  padding: 120px 64px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.eyebrow {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #3ccbda;
+  margin: 0;
+}
+
+.headline {
+  font-size: clamp(2rem, 3.5vw, 56px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: white;
+  margin: 0;
+}
+
+/* ── Scroll track ── */
+.track {
+  display: flex;
+  gap: 16px;
+  padding: 32px 64px 80px;
+  margin: -32px 0 -80px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 64px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior-x: contain;
+}
+.track::-webkit-scrollbar { display: none; }
+
+/* ── Card ── */
+.card {
+  flex: 0 0 auto;
+  width: 428px;
+  min-height: 428px;
+  border-radius: 16px;
+  padding: 40px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background: #171717;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.card:hover,
+.cardActive {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
+  border-color: rgba(60, 203, 218, 0.2);
+}
+
+/* ── Background image ── */
+.cardImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.card:hover .cardImg,
+.cardActive .cardImg { opacity: 0.15; }
+
+/* ── Gradient overlay ── */
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(180deg, transparent 30%, rgba(0, 0, 0, 0.6) 100%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.card:hover .cardOverlay,
+.cardActive .cardOverlay { opacity: 1; }
+
+/* ── Teal corner accent ── */
+.cardTeal {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(225deg, rgba(60, 203, 218, 0.25) 0%, transparent 45%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.card:hover .cardTeal,
+.cardActive .cardTeal { opacity: 1; }
+
+/* ── Step number ── */
+.number {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #3ccbda;
+  position: relative;
+}
+
+/* ── Card content ── */
+.cardContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+  color: white;
+}
+
+.desc {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.55);
+  transition: color 0.25s ease;
+}
+.card:hover .desc,
+.cardActive .desc { color: rgba(255, 255, 255, 0.75); }
+
+/* ── Navigation ── */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 64px 0;
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.dot {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  width: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+.dotActive {
+  background: white;
+  width: 40px;
+}
+
+.arrows {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  color: white;
+}
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.08);
+}
+.arrow svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .intro { padding: 80px 32px 64px; }
+  .track { padding: 32px 32px 80px; scroll-padding-left: 32px; }
+  .nav   { padding: 32px 32px 0; }
+  .card  { width: 80vw; min-height: 320px; }
+}
+
+@media (max-width: 480px) {
+  .intro { padding: 64px 20px 48px; }
+  .track { padding: 32px 20px 80px; scroll-padding-left: 20px; }
+  .nav   { padding: 24px 20px 0; }
+  .card  { width: 85vw; }
+}
