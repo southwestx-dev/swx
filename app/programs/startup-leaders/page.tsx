@@ -11,7 +11,6 @@ import HowItWorks from './HowItWorks'
 import HowItWorksAlt from './HowItWorksAlt'
 import BenefitsSlider from './BenefitsSlider'
 import OfferSection from './OfferSection'
-import ScheduleSection from './ScheduleSection'
 import LogoBand from './LogoBand'
 import ImageHero from './ImageHero'
 
@@ -141,7 +140,6 @@ export default function StartupLeadersPage() {
         <HowItWorks />
         <HowItWorksAlt />
         <BenefitsSlider />
-        <ScheduleSection />
         <FAQSection
           eyebrow="FAQ"
           headline={'Further info'}
