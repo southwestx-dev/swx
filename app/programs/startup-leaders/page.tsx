@@ -7,7 +7,8 @@ import { r, TEAL, DARK, W10 } from '../../lib/tokens'
 import SectionIntro from '../../components/SectionIntro'
 import StatsCounter from '../../components/StatsCounter'
 import FAQSection from '../../components/FAQSection'
-import StickyScroll from './StickyScroll'
+import HowItWorks from './HowItWorks'
+import HowItWorksAlt from './HowItWorksAlt'
 import OfferSection from './OfferSection'
 import ScheduleSection from './ScheduleSection'
 import LogoBand from './LogoBand'
@@ -136,7 +137,8 @@ export default function StartupLeadersPage() {
         ]} />
         <OfferSection />
         <ImageHero />
-        <StickyScroll />
+        <HowItWorks />
+        <HowItWorksAlt />
         <ScheduleSection />
         <FAQSection
           eyebrow="FAQ"
